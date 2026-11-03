@@ -1,0 +1,15 @@
+case_id,customer_ref,document_type,amount_cad
+CASE-001,C-001,Agreement,10700.00
+CASE-002,C-002,Amendment,11400.00
+CASE-003,C-003,Waiver,12100.00
+CASE-004,C-004,Disclosure,12800.00
+CASE-005,C-005,Agreement,13500.00
+CASE-006,C-006,Amendment,14200.00
+CASE-007,C-007,Waiver,14900.00
+CASE-008,C-008,Disclosure,15600.00
+CASE-009,C-009,Agreement,16300.00
+CASE-010,C-010,Amendment,17000.00
+CASE-011,C-011,Waiver,17700.00
+CASE-012,C-012,Disclosure,18400.00
+CASE-013,C-013,Agreement,19100.00
+CASE-014,C-014,Amendment,19800.00

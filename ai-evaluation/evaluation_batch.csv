@@ -1,0 +1,5 @@
+example_id,requirement,fictional_source,proposed_output,decision,severity,rationale,proposed_correction
+EV-01,Sum figures before reporting total,Line items 120.00; 80.00; 25.00,Total is 235.00,FAIL,HIGH,The line items total 225.00,Correct total to 225.00
+EV-02,Do not claim an unexecuted feature,Notification design is not deployed,Notifications are delivered to staff,FAIL,MEDIUM,Deployment is not supported,Mark as designed but not deployed
+EV-03,Mask all fictional IDs,Identifier ZX-00042 is in source and note,Transformed note still contains ZX-00042,FAIL,HIGH,Identifier remains visible,Hold and redact identifier from note
+EV-04,Use supported counts,Source 14; export 14; distinct IDs 13,Both have 14 rows but an export ID is duplicated,PASS,PASS,Control counts support the statement,No correction
