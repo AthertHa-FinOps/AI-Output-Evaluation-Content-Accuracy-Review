@@ -1,51 +1,43 @@
-# AI output evaluation, document verification and record-quality review
+# AI output evaluation and record-quality review
 
-**Hans Atherton | Evidence-based portfolio for AI evaluation and back-office quality roles**
+**Hans Atherton | Stouffville, Ontario | English and Spanish**
 
-A fluent answer can contain the wrong figure, expose a fictional identifier or describe an untested system as live. This repository contains source-based review exercises, their reference decisions and reproducible record checks. My paid work is in regulated real estate transaction documentation and discrepancy follow-up; the exercises are **self-directed, AI-assisted and synthetic**, not employer assignments.
+In my real estate work, I check agreements, amendments and supporting financial and identity records, identify conflicting information and follow up on corrections before contractual deadlines. This portfolio applies similar source-checking methods to fictional AI responses and administrative records.
 
-## Start with the evidence
+## Four examples to review first
 
-| Work sample | What to inspect | Status |
+| Example | What the source says | Review decision shown in the exercise |
 |---|---|---|
-| **[30-case evaluation batch](ai-evaluation/README.md)** | Fictional source, candidate output, four-dimension rubric, reference verdict and proposed correction; includes English and Spanish | AI-drafted reference set; **not independently rated by Hans** |
-| **[10 paired-response comparisons](ai-evaluation/PAIRED_COMPARISONS.md)** | A/B choices, a tie, a neither-acceptable case and evidence-based rationales | AI-drafted reference comparisons; human sign-off pending |
-| **[Back-office reconciliation](back-office-case-study/README.md)** | Original synthetic records, issue log, control totals, code and four automated tests | Reproducible technical demonstration |
-| **[Earlier review notes](case-studies/detailed-evaluation-notes.md)** | Longer narrative of evidence claims, misleading captions, calculation discrepancies and privacy examples | Author's narrative; independent provenance of every assertion is not established |
+| [EV-02: Incorrect total](ai-evaluation/WORKED_EXAMPLES.md) | CAD 141 + CAD 59 | Reject CAD 210; the supported total is CAD 200 |
+| [EV-13: Identifier not masked](ai-evaluation/WORKED_EXAMPLES.md) | Fictional ID ZX-00042 must be fully redacted | Reject the unmasked output and require redaction |
+| [PAIR-08: Unsupported test results](ai-evaluation/PAIRED_COMPARISONS.md) | Testing has not taken place | Neither response is acceptable because both claim successful execution |
+| [EX-006: Processing amount mismatch](back-office-case-study/outputs/exception_register.csv) | Source amount CAD 14,200; export amount CAD 12,400 | Leave the exception open and compare supporting financial records before correction |
 
-## Evidence review in 60 seconds
+These are reference decisions in fictional exercises. The casebook decisions were drafted with AI assistance and have not yet been independently scored by me.
 
-**SOURCE → REQUIREMENT → OUTPUT → FINDING → DECISION**
+## What is available to inspect
 
-```mermaid
-flowchart LR
-  A["Fictional source"] --> B["Task requirement"]
-  B --> C["Candidate answer"]
-  C --> D{"Evidence sufficient?"}
-  D -->|No| E["Insufficient evidence; request context"]
-  D -->|Yes| F{"Supported and compliant?"}
-  F -->|Yes| G["ACCEPT"]
-  F -->|No| H["REJECT; document correction"]
-```
+| Work sample | Contents | Current evidence |
+|---|---|---|
+| [AI-response casebook](ai-evaluation/README.md) | 30 source-based examples covering arithmetic, evidence, privacy, instructions, records and Spanish meaning | 12 ACCEPT, 14 REJECT and 4 INSUFFICIENT_EVIDENCE reference verdicts |
+| [Paired-response comparisons](ai-evaluation/PAIRED_COMPARISONS.md) | Ten A/B exercises, including a tie and a neither-acceptable pair | Five A, three B, one TIE and one NEITHER reference preferences |
+| [Back-office reconciliation](back-office-case-study/README.md) | Two fictional 14-row datasets, Python reconciliation, an exception register and unit tests | Ten logged exceptions; no source records automatically changed |
+| [Earlier document-review notes](case-studies/detailed-evaluation-notes.md) | Examples involving unsupported claims, inconsistent figures, captions and privacy | First-person narrative; original revision evidence is not complete |
 
+The structured evaluation set includes **five Spanish-language cases**; the paired set includes **two Spanish comparisons**.
 
-| Sample | Source and requirement | Candidate statement | Reference action |
-|---|---|---|---|
-| EV-02 · arithmetic | 141 + 59 CAD | “CAD 210” | **Reject:** correct arithmetic is CAD 200 |
-| EV-10 · deployment | Export exists; no live run log | “Cannot verify production deployment” | **Insufficient evidence:** request run records rather than invent deployment |
-| EV-13 · privacy | Fully redact fictional ZX-00042 | Exposes ZX-00042 | **Reject:** redact identifier |
-| PAIR-08 · evidence | Test has not run | Both answers assert successful testing | **Neither:** both unsupported |
+## Review method
 
-The reference judgments are generated practice material, **not an independently administered evaluation of model quality, a hiring assessment or a claimed accuracy rate**. The evaluation script checks dataset structure and consistency, not whether a human agrees with every decision.
+I compare the stated requirement with the supplied source, identify the unsupported or incorrect part of the output, and record the next action. Some errors have a definite correction, such as the arithmetic example. Others require a hold or a request for more evidence, such as a possible duplicate or a claimed deployment without run records.
 
-## Why this relates to my paid experience
+The [evaluation rubric](ai-evaluation/rubric.md) describes the decision rules. [Worked examples](ai-evaluation/WORKED_EXAMPLES.md) show how the reference decisions apply them. [The recruiter overview](RECRUITER_OVERVIEW.md) provides a shorter path through the evidence.
 
-In real estate transaction work I compare agreements, changes, supporting records and required documents; trace missing or contradictory information; and coordinate follow-up before deadlines. The portfolio exercises the adjacent discipline of asking what a claim or record actually supports, and refusing unsupported corrections.
+## Project status
 
-**English and Spanish.** The structured set includes five Spanish-language source cases and three Spanish paired comparisons. Those reference judgments still require independent personal review before being described as my bilingual annotation results.
+This is **self-directed portfolio work using fictional data**. AI assisted with the evaluation reference cases, comparisons, code and documentation. The [personal-review worksheet](ai-evaluation/OWNER_REVIEW_WORKSHEET.md) has no completed entries; the reference scores should not be described as my independent annotation results.
 
-[One-page recruiter evidence summary](RECRUITER_OVERVIEW.md) · [Two-minute walkthrough script](DEMO_WALKTHROUGH.md) · [Evaluation rubric](ai-evaluation/rubric.md) · [Evidence and ownership boundaries](EVIDENCE_AND_OWNERSHIP.md) · [Quality audit](PORTFOLIO_AUDIT.md)
+The Python reconciliation and casebook-structure checks are run through [GitHub Actions](https://github.com/AthertHa-FinOps/AI-Output-Evaluation-Content-Accuracy-Review/actions/workflows/portfolio-checks.yml). They check programmed expectations, not the correctness of every natural-language judgment. This repository does not represent paid AI annotation or a deployed customer system.
 
-All new data is fictional, and AI assisted with generation, code and editorial drafting. No client data, production annotation work, blinded benchmark, second-rater study or commercial performance claims are represented.
+[Evidence and ownership details](EVIDENCE_AND_OWNERSHIP.md) · [Two-minute walkthrough outline](DEMO_WALKTHROUGH.md) · [Repository audit](PORTFOLIO_AUDIT.md)
 
-Other [CRM data-quality portfolio](https://github.com/AthertHa-FinOps/crm-automation-data-quality-portfolio) · [AWS cost allocation investigation](https://github.com/AthertHa-FinOps/aws-finops-cost-allocation-investigation)
+Related work: [CRM data quality](https://github.com/AthertHa-FinOps/crm-automation-data-quality-portfolio) · [AWS cost investigation](https://github.com/AthertHa-FinOps/aws-finops-cost-allocation-investigation)

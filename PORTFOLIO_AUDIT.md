@@ -1,23 +1,39 @@
-# Portfolio quality review — November 3, 2026
+# Repository evidence and release checks
 
-## Checks addressed in this revision
+**Review date:** November 3, 2026
 
-- Replaced a four-row-only landing view with a **30-case** mixed English/Spanish fictional evaluation key and **10** A/B pairs.
-- Added explicit four-dimension scoring and evidence-insufficient decisions; numerical values are reference ratings, not human review scores or model performance.
-- Included PASS/REJECT/INSUFFICIENT_EVIDENCE and A/B/TIE/NEITHER examples to avoid a fail-only demonstration.
-- Added source-based worked examples, a one-page recruiter evidence map and an independent owner review worksheet.
-- Separated paid transaction experience, reproducible generated code, AI-authored reference judgments and unverified author narrative.
-- Updated the stale prerelease audit wording and retained the prior narrative rather than erasing it.
-- Validation checks unique IDs, expected category distribution, score schema, reason fields and paired preferences; the pre-existing reconciliation tests still run in CI.
+## Published sample inventory
 
-## What is not independently verified
+| Item | Recorded evidence |
+|---|---|
+| Evaluation casebook | 30 fictional cases across six categories |
+| Reference decisions | 12 ACCEPT, 14 REJECT, 4 INSUFFICIENT_EVIDENCE |
+| Spanish-language material | Five casebook entries and two paired comparisons |
+| Paired-response set | Ten pairs: five A, three B, one TIE, one NEITHER |
+| Processing reconciliation | 14 source rows, 14 export rows, 13 distinct export case IDs and ten recorded exceptions |
+| Independent owner review | Seven worksheet prompts; no completed decisions |
 
-- The candidate has not supplied completed blinded personal ratings or a dated independent review log for the new cases.
-- Reference scores are not statistically calibrated; no external adjudicator, reliability study, enterprise model benchmark or paid annotation results exist.
-- The repository checks are structural and deterministic. They cannot independently certify natural-language judgment or all translation nuances.
-- The historical author narrative is a claimed account, not cryptographically authenticated evidence of every earlier document revision.
-- No guarantee about AI text detectors, interview outcomes or hiring probabilities.
+These counts are drawn from the committed sample files. Reference ratings and rationales were drafted with AI assistance; the numbers are not an accuracy score or a benchmark result.
 
-## Release state
+## Automated checks
 
-This file describes the intended release; use the published GitHub Actions status and final merged commit as the definitive evidence that the latest main-branch build passed. Do not interpret an earlier passing CI run as validation of an unmerged change.
+The repository workflow runs on pushes to `main` and pull requests. It performs:
+
+- Casebook and paired-example field, ID, score-range, category and selected fixed-anchor checks
+- Relative Markdown-link checks
+- Four Python reconciliation unit tests on fictional records
+- Regeneration and count/status checks of the ten-row exception register
+
+See the [GitHub Actions run history](https://github.com/AthertHa-FinOps/AI-Output-Evaluation-Content-Accuracy-Review/actions/workflows/portfolio-checks.yml) for the outcome on the latest published commit. A passing run verifies these programmed checks, not agreement with every language judgment.
+
+## Known limits
+
+- The new evaluation cases have no dated independent personal ratings or second-reviewer agreement record.
+- A generated answer key is not a validated model comparison or professional annotation history.
+- The source files are fictional. The back-office checks do not establish production-system accuracy or business error rates.
+- The earlier AWS document-review narrative has not been matched claim by claim to dated before-and-after versions.
+- Internal link checks do not establish whether every external resource is currently accessible.
+
+## Review conclusion
+
+The repository provides inspectable source/output comparisons and a reproducible record-checking exercise. The next substantive evidence addition would be dated, independent review decisions entered in the existing worksheet, including any disagreements with the reference key.

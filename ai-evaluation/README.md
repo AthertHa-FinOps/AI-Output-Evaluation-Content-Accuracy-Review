@@ -1,18 +1,25 @@
-# Structured evaluation exercise — 30 source-grounded cases
+# AI-response evaluation casebook
 
-This is a **reference exercise generated with AI assistance**, not a record of thirty independently adjudicated assignments. Its purpose is to make the verification standard inspectable and to support later personal review.
+Thirty fictional source-and-answer cases are organized by issue type, with a proposed verdict, rationale, corrective action and four-dimension rubric where the evidence permits scoring. **The reference decisions were drafted with AI assistance; I have not yet recorded independent personal ratings.**
 
-## Review process
+## Start with a decision
 
-1. Read the task and supplied fictional evidence.
-2. Examine the proposed answer for grounding, instruction compliance, privacy and completeness.
-3. Choose ACCEPT, REJECT or INSUFFICIENT_EVIDENCE, and state which supporting source controls the finding.
-4. Record a correction or verification request. Do not automatically resolve an unknown.
-5. Check the reference key **after** independent review; log disagreements in [owner review worksheet](OWNER_REVIEW_WORKSHEET.md).
+- [EV-02](WORKED_EXAMPLES.md): two source amounts total CAD 200, but the candidate answer says CAD 210
+- [EV-10](WORKED_EXAMPLES.md): a workflow export exists without evidence of a live deployment
+- [EV-13](WORKED_EXAMPLES.md): a fictional account ID is reproduced despite an explicit redaction requirement
+- [EV-22](WORKED_EXAMPLES.md): matching email addresses do not authorize deleting a record
+- [PAIR-09](PAIRED_COMPARISONS.md): a Spanish approval status must remain pending in English
 
-The generated answer key is in [casebook.jsonl](casebook.jsonl); ten [paired comparisons](pairs.jsonl) test preference selection, including ties and neither-acceptable answers. The [rubric](rubric.md) defines hard-failure rules and scoring anchors. A [sample of worked decisions](WORKED_EXAMPLES.md) shows the reasoning and limitations without dumping every item onto the front page.
+The full [casebook](casebook.jsonl) preserves each fictional source, task, candidate output, proposed decision, scoring fields, rationale and follow-up. [Response pairs](pairs.jsonl) provide two alternatives against the same source.
 
-## Distribution
+## How to review a case
+
+1. Read the task and fictional source before looking at the reference decision.
+2. Check the response against the [rubric](rubric.md) for grounding, instructions, privacy and completeness.
+3. Record a supported decision or identify what evidence is missing.
+4. Compare your finding with the reference key afterward. Record any disagreement in the [owner worksheet](OWNER_REVIEW_WORKSHEET.md).
+
+## Case inventory
 
 | Category | Cases |
 |---|---:|
@@ -24,14 +31,14 @@ The generated answer key is in [casebook.jsonl](casebook.jsonl); ten [paired com
 | Spanish-language meaning | 5 |
 | **Total** | **30** |
 
-Reference decision distribution: **12 ACCEPT / 14 REJECT / 4 INSUFFICIENT_EVIDENCE**. Each decision and four-dimension score (if applicable) is AI-drafted, not a certified rating or benchmark.
+Reference verdicts: **12 ACCEPT, 14 REJECT, 4 INSUFFICIENT_EVIDENCE**. The ten paired comparisons include **two Spanish-language pairs**.
 
-## Verify structure
+## Structural verification
 
-From the repository root, with Python 3:
+From the repository root with Python 3:
 
 ```bash
 python ai-evaluation/scripts/validate_examples.py
 ```
 
-This validates counts, fields, score ranges, IDs and distributions; it cannot verify human authorship, professional annotation ability or the correctness of every nuanced judgment. The original four-case exploratory file remains available as [legacy examples](evaluation_batch.csv).
+The script checks IDs, fields, selected example anchors, score ranges and distribution. It does not determine whether every reference judgment is correct. The [four earlier exploratory examples](evaluation_batch.csv) remain available separately.

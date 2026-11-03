@@ -1,29 +1,27 @@
-# Two-minute recruiter walkthrough (script, not a recorded demo)
+# Two-minute portfolio walkthrough
 
-**Status:** A walkthrough plan only. A genuine video or live demonstration must be recorded by Hans and must show actual screen evidence. No recording or personal presentation is claimed here.
+**Format:** A walkthrough outline. No video or live demonstration has been recorded.
 
-## 0:00–0:20 — What this portfolio is
+## 0:00–0:20 | Connect the work to real estate records
 
-> My paid background is reviewing regulated real estate transactions and their supporting records. Here I apply similar source-checking discipline to fictional AI outputs, document records and quality reviews. The evaluation reference examples were generated with AI assistance, and I do not claim they are completed paid annotation assignments.
+Open the [recruiter evidence map](RECRUITER_OVERVIEW.md).
 
-Open the [one-page evidence map](RECRUITER_OVERVIEW.md).
+My paid work involves comparing real estate agreements, amendments and supporting records, identifying missing or conflicting details and coordinating corrections before deadlines. The cases here use fictional data to illustrate related review decisions.
 
-## 0:20–0:50 — Reconcile a claim
+## 0:20–0:45 | Check a definite error
 
-Open [worked decision A](ai-evaluation/WORKED_EXAMPLES.md). Show why CAD 141 plus CAD 59 is CAD 200, not the proposed CAD 210. Explain what else would need updating if this were a business report.
+Open [EV-02](ai-evaluation/WORKED_EXAMPLES.md). The source amounts are CAD 141 and CAD 59; the proposed answer says CAD 210. Show the correct CAD 200 total and explain why the source figures must be checked before updating a document.
 
-## 0:50–1:20 — Decide whether to hold or correct
+## 0:45–1:10 | Handle a discrepancy that cannot be guessed away
 
-Open [the document/record checks](back-office-case-study/README.md) and [exception log](back-office-case-study/outputs/exception_register.csv). Explain why a potentially duplicate record should not be deleted solely because it resembles another record. Indicate the source evidence that would permit a correction.
+Open [EX-006](back-office-case-study/outputs/exception_register.csv). The source lists CAD 14,200 and the processing export lists CAD 12,400. Both values remain visible, and the exception remains open pending supporting-record verification.
 
-## 1:20–1:45 — Evaluate two competing responses
+## 1:10–1:35 | Compare two unsupported responses
 
-Open [paired comparisons](ai-evaluation/PAIRED_COMPARISONS.md). Use PAIR-08: the reference says neither response is acceptable, because both describe tests as completed when the source says none ran. Say why a confident tone is irrelevant.
+Open [PAIR-08](ai-evaluation/PAIRED_COMPARISONS.md). The source says no test has been run. Both proposed responses claim successful execution, so the reference preference is NEITHER. Explain which evidence would be needed to change the decision.
 
-## 1:45–2:00 — Show the limits
+## 1:35–2:00 | Explain the evidence status
 
-Open [evidence and ownership](EVIDENCE_AND_OWNERSHIP.md). Make clear that the fictional casebook is AI-drafted practice, while the automated reconciliation tests demonstrate a narrower executed example.
+Open [the ownership summary](EVIDENCE_AND_OWNERSHIP.md). The reconciliation tests are runnable and the AI-response decisions are drafted reference keys. [Personal review decisions](ai-evaluation/OWNER_REVIEW_WORKSHEET.md) have not yet been entered.
 
-## What makes this a credible demonstration
-
-The value of the walkthrough is the *personal explanation of evidence and business decisions*, not the mere presence of a generated script. Record it only after you can reproduce the examples and explain the choices without reading a canned answer. Do not claim a live video or verified independent scoring until it actually exists.
+The walkthrough can be recorded after a genuine independent review and practice run. Use actual screen evidence and retain the original results; do not substitute the outline for a completed demonstration.

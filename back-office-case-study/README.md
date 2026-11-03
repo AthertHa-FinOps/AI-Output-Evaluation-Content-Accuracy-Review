@@ -1,41 +1,51 @@
-# Back-office reconciliation and exception management
+# Back-office record reconciliation
 
-**Fictional records | AI-assisted work sample | Not a client project**
+This exercise compares a fictional processing export with a fictional source register. It checks whether the same cases are present and whether customer references, amounts and documents agree. Matching row counts are not enough.
 
-The task is to compare an administrative processing export with source cases and report discrepancies rather than silently fix them. Both inputs contain 14 rows, but row-count agreement does not establish record agreement.
+## Results
 
-## Business rules
+| Control | Result |
+|---|---:|
+| Source rows | 14 |
+| Processing rows | 14 |
+| Distinct processed case IDs | 13 |
+| Logged exceptions | 10 |
 
-- Match on trimmed, uppercase case IDs but preserve original identifiers.
-- Find source cases missing in the export, export cases without a source and duplicate processing.
-- Compare customer references, document type, amount and required-document status.
-- Never guess monetary corrections, invent missing documents or delete/merge records automatically.
-- Preserve each finding with source evidence, observed value, severity and a suggested follow-up.
+The [exception register](outputs/exception_register.csv) retains the original discrepancies. For example:
 
-## Artifacts
+- **EX-006 / CASE-006:** The source amount is CAD 14,200; the processed amount is CAD 12,400. The amount remains unresolved until supporting records are checked.
+- **EX-004 / CASE-003:** One source case has two processing entries. Both remain on hold until the history establishes whether the second is a duplicate or a legitimate version.
+- **EX-001 / CASE-011:** A source case has no processing entry. The proposed follow-up is to check the queue or transmission history, not invent a processed record.
 
-| Artifact | Location |
+All ten findings have the disposition **OPEN - review required**. No source row is deleted or corrected automatically.
+
+## Checks used
+
+- Normalize case IDs for matching while preserving the original values.
+- Find missing source cases, processed cases without a source and repeated processing IDs.
+- Compare amounts, document types, customer references and received-document status.
+- Record the issue, observed value, severity and next step without assuming authorization to change a record.
+
+## Files
+
+| Artifact | Link |
 |---|---|
-| Fictional source records | [data/source_records.csv](data/source_records.csv) |
-| Fictional processing export | [data/processing_export.csv](data/processing_export.csv) |
-| Python 3 script | [scripts/reconcile.py](scripts/reconcile.py) |
-| Four unit tests | [tests/test_reconcile.py](tests/test_reconcile.py) |
-| Exception register | [outputs/exception_register.csv](outputs/exception_register.csv) |
-| Control totals | [outputs/control_summary.md](outputs/control_summary.md) |
+| Source cases | [source_records.csv](data/source_records.csv) |
+| Processing export | [processing_export.csv](data/processing_export.csv) |
+| Reconciliation script | [reconcile.py](scripts/reconcile.py) |
+| Four unit tests | [test_reconcile.py](tests/test_reconcile.py) |
+| Exception register | [exception_register.csv](outputs/exception_register.csv) |
+| Control summary | [control_summary.md](outputs/control_summary.md) |
 
-## Reproduce
+## Reproduce the checks
 
-~~~shell
+From this folder, with Python 3 (standard library only):
+
+```bash
 python scripts/reconcile.py
 python -m unittest discover -s tests -v
-~~~
+```
 
-Python standard library only. The script regenerates the output files.
+The unit tests check the expected counts, planted defects, unresolved status and normalization. The [published CI workflow](https://github.com/AthertHa-FinOps/AI-Output-Evaluation-Content-Accuracy-Review/actions/workflows/portfolio-checks.yml) runs the same sample checks.
 
-## Sample result and decision limits
-
-Source and processing counts are both **14**, but the export has **13 distinct case IDs** and the checks identify **10 exceptions**. Two source cases are absent from processing, one processed case lacks a source, a case is duplicated, and other records contain missing or contradictory information.
-
-Every exception remains **OPEN - review required**. A duplicate might be a legitimate amendment; an unmatched processed record might come from another intake system; a wrong amount needs supporting documents. No automatic correction is presented as a completed transaction.
-
-AI assisted code and text drafting. The repository states its review rules, provides the planted synthetic defects and includes four automated tests that check the expected outputs; those tests passed on the published CI workflow. This supports only a small designed example, not paid programming, current securities/insurance operations, production control systems or real-world error-rate claims.
+**Scope:** The records and defects are deliberately fictional. AI assisted with the code and documentation. The tests verify this defined exercise, not a live processing system.

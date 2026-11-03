@@ -1,41 +1,55 @@
-# Worked decisions — what a recruiter should look for
+# Worked examples: source, finding and next action
 
-These are source-grounded **AI-drafted examples**. They show a review method; they do not claim personal independent annotation or paid QA experience.
+The cases below come from the fictional [evaluation reference set](casebook.jsonl) and [paired-response set](pairs.jsonl). These are AI-drafted reference decisions, not independently completed personal ratings.
 
-## Example A: Arithmetic that sounds plausible
+## EV-02 | Incorrect arithmetic
 
-- Source: approved amounts CAD 141 and CAD 59.
-- Candidate answer: “The total is CAD 210.”
-- Reference decision: **REJECT**.
-- Evidence: CAD 141 + CAD 59 = CAD 200.
-- Resolution: Correct the total after checking source records, and propagate the correction to affected documents. The test is not how confidently a number is stated, but whether it reconciles.
+**Source:** Two amounts, CAD 141 and CAD 59.
 
-## Example B: An uncertain deployment claim
+**Proposed answer:** "The total is CAD 210.00."
 
-- Source: workflow file exists, but no production execution record is available.
-- Candidate answer: “There is insufficient evidence to establish deployment.”
-- Reference decision: **INSUFFICIENT_EVIDENCE** for the deployment fact; the candidate answer appropriately recognizes the gap.
-- Resolution: Ask for a live execution and deployment history. Never convert a design into a claimed working service.
+**Reference verdict:** REJECT. The arithmetic total is CAD 200.00.
 
-## Example C: Privacy controls must include free text
+**Next action:** Check the source values, correct the total, and review any other document using the incorrect figure.
 
-- Source: a fictional note contains a person's full name, which the task requires masking everywhere.
-- Candidate response leaves the name inside a note while masking the name field.
-- Reference decision: **REJECT**, privacy score 0.
-- Resolution: Remove the name from all relevant fields and review similar records for the same failure mode.
+## EV-10 | Deployment without execution evidence
 
-## Example D: Duplicate ≠ safe deletion
+**Source:** A workflow export is available, but there is no production run log or system access.
 
-- Source: two fictional CRM rows share an email but have different notes and timestamps.
-- Candidate response: “Delete the newest row.”
-- Reference decision: **REJECT**.
-- Resolution: Preserve both and check authoritative identity, ownership and version history first.
+**Proposed answer:** "There is insufficient evidence to establish production deployment."
 
-## Example E: Faithful bilingual interpretation
+**Reference verdict:** INSUFFICIENT_EVIDENCE for the deployment fact. The cautious answer correctly reflects what is known.
 
-- Spanish source: “El pago está pendiente de aprobación.”
-- Response A: “The payment was approved.”
-- Response B: “The payment is awaiting approval.”
-- Reference preference: **B** because approval has not yet happened.
+**Next action:** Request live run records and deployment evidence instead of treating the export as proof of operation.
 
-These examples are deliberately compact. More nuanced judgments should be documented with contrary evidence, unknowns and a clear decision trail rather than a label alone.
+## EV-13 | Unredacted account identifier
+
+**Source requirement:** Fully redact fictional account ID ZX-00042.
+
+**Proposed answer:** "ZX-00042"
+
+**Reference verdict:** REJECT. The identifier is still visible.
+
+**Next action:** Replace the field with [REDACTED] and check the output against the masking requirement.
+
+## EV-22 | Potential duplicate record
+
+**Source:** Two fictional export rows use the same email address but have different timestamps and notes.
+
+**Proposed answer:** "Delete the later record immediately."
+
+**Reference verdict:** REJECT. Shared contact information does not establish which record is authoritative.
+
+**Next action:** Keep both records and review identity, versions and history before approving any deletion or merge.
+
+## PAIR-09 | Spanish approval status
+
+**Source:** "El pago está pendiente de aprobación."
+
+**Response A:** "The payment was approved."
+
+**Response B:** "The payment is awaiting approval."
+
+**Reference preference:** B. The source describes a pending decision, not an approval already granted.
+
+The full JSONL files contain the original inputs, reference rationale and scoring fields. A dated independent review of these judgments can be recorded in the [owner worksheet](OWNER_REVIEW_WORKSHEET.md).
