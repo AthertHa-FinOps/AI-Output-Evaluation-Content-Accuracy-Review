@@ -12,6 +12,26 @@ The cases below come from the fictional [evaluation reference set](casebook.json
 
 **Next action:** Check the source values, correct the total, and review any other document using the incorrect figure.
 
+## EV-04 | Missing approved adjustment
+
+**Source:** Two approved adjustments: CAD 90 and CAD 10.
+
+**Constructed answer:** "Approved adjustment: CAD 90."
+
+**AI reference verdict:** REJECT. The combined approved adjustment is CAD 100. The answer leaves out an entire approved component; this is a grounding and completeness error.
+
+**Next action:** Recalculate against the two source items. Do not change either original amount.
+
+## EV-19 | Unsupported reconciliation summary
+
+**Source:** The checklist requires a confidence label, and no reconciled result is provided.
+
+**Constructed answer:** "All records reconciled."
+
+**AI reference verdict:** REJECT. The answer lacks the required confidence label and claims completed reconciliation without a supporting result.
+
+**Next action:** Report that reconciliation status is unverified and include the requested confidence label, rather than inventing a completed result.
+
 ## EV-10 | Deployment without execution evidence
 
 **Source:** A workflow export is available, but there is no production run log or system access.
@@ -41,6 +61,16 @@ The cases below come from the fictional [evaluation reference set](casebook.json
 **Reference verdict:** REJECT. Shared contact information does not establish which record is authoritative.
 
 **Next action:** Keep both records and review identity, versions and history before approving any deletion or merge.
+
+## EV-27 | Spanish payment status reversed
+
+**Spanish source:** "El pago fue rechazado."
+
+**Constructed English answer:** "The payment was approved."
+
+**AI reference verdict:** REJECT. *Rechazado* means *rejected*. The answer reverses the outcome of the payment.
+
+**Next action:** Use "The payment was rejected." Keep the final status tied to the original Spanish source.
 
 ## PAIR-09 | Spanish approval status
 

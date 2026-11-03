@@ -49,10 +49,7 @@ Over time, the summary began claiming things that the full report explicitly dis
 
 Each document was internally consistent. Read together, however, they contradicted one another.
 
-I describe these problems openly because finding this class of error is the skill I want the portfolio to demonstrate.
-
-Content that is fluent, organized, and confidently written can still be unsupported by its evidence. Those are often the claims that most 
-need deliberate review.
+These examples are retrospective notes. The older versions and all individual correction timestamps are not linked, so the narrative should not be treated as a verified before-and-after audit log.
 
 ---
 
@@ -243,6 +240,8 @@ as a resource-tagging failure when the reporting configuration itself may be inc
 **Correction:** Applying a resource tag and making that tag available for cost allocation are separate steps. Relevant tag keys must be 
 activated for cost-allocation reporting before they can be used to categorize those costs.
 
+**AWS source:** [Activating user-defined cost allocation tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/activating-tags.html).
+
 ---
 
 ### Statement 2
@@ -276,8 +275,7 @@ AWS Config records observed resource configuration state over time and can show 
 
 It does not record the original API request that created or modified the resource.
 
-CloudTrail records API activity and request parameters, making it the stronger evidence source when the question depends on what was actually 
-submitted in a creation or modification request.
+CloudTrail can provide API events and request parameters when the relevant activity is recorded. A reviewer should confirm that the event type and retention period cover the action in question rather than assuming every event is available.
 
 **Why it matters:** The distinction affects remediation.
 
@@ -289,6 +287,8 @@ The evidence needs to support that distinction before assigning a cause.
 
 **Correction:** Use AWS Config to examine recorded resource-state changes over time and CloudTrail when the analysis depends on API activity 
 or request parameters.
+
+**AWS sources:** [How AWS Config works](https://docs.aws.amazon.com/config/latest/developerguide/how-does-config-work.html) and [CloudTrail event types and coverage](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-events.html).
 
 ---
 
@@ -314,7 +314,7 @@ Durante más de trece años trabajé revisando documentos y expedientes de trans
 Cada expediente tenía que concordar con los contratos y la documentación de respaldo antes de poder avanzar. Parte de mi trabajo consistía en 
 identificar información incompleta o contradictoria y seguir el problema hasta que se corrigiera.
 
-Puedo trabajar en inglés y español en revisión de contenido, evaluación de calidad y verificación de información.
+Los ejercicios siguientes ilustran revisión de información en inglés y español; no son evaluaciones profesionales remuneradas.
 
 ### Ejemplo de evaluación — transacción inmobiliaria en Ontario
 

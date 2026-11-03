@@ -17,13 +17,13 @@ The [exception register](outputs/exception_register.csv) retains the original di
 - **EX-004 / CASE-003:** One source case has two processing entries. Both remain on hold until the history establishes whether the second is a duplicate or a legitimate version.
 - **EX-001 / CASE-011:** A source case has no processing entry. The proposed follow-up is to check the queue or transmission history, not invent a processed record.
 
-All ten findings have the disposition **OPEN - review required**. No source row is deleted or corrected automatically.
+All ten findings have the disposition **OPEN - review required**. The status rule flags what the processing export says, not an independently verified missing document. No source row is deleted or corrected automatically.
 
 ## Checks used
 
 - Normalize case IDs for matching while preserving the original values; stop with an explicit error if source IDs are blank or collide after normalization.
 - Find missing source cases, processed cases without a source and repeated processing IDs.
-- Compare amounts, document types, customer references and received-document status.
+- Compare amounts, document types and customer references. Flag a processing export status other than `Received` under an explicit completion rule; the source file does not independently certify document receipt.
 - Record the issue, observed value, severity and next step without assuming authorization to change a record.
 
 ## Files

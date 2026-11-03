@@ -1,49 +1,46 @@
-# AI response accuracy and record-review exercises
+# AI response checking | English and Spanish
 
-**Hans Atherton | English and Spanish | Self-directed portfolio using fictional data**
+**Hans Atherton | Stouffville, Ontario | Self-directed work sample**
 
-My paid real estate work involves checking agreements, amendments, financial figures and identity documents, then following up when records conflict. This portfolio uses fictional tasks to demonstrate a related method: compare a proposed answer with its source, identify what is unsupported and document the required correction or hold.
+In real estate transactions, I check agreements and supporting records for conflicting figures, missing details and statements that need correction. This portfolio applies those checks to **constructed fictional responses**. The examples are not captured outputs from a deployed model or client assignments.
 
-## Start with the source, not the score
+## Inspect a source and the proposed judgment
 
-| Exercise | What the fictional source establishes | Reference assessment |
+| Case | Evidence in the exercise | Issue to decide |
 |---|---|---|
-| [EV-02](ai-evaluation/WORKED_EXAMPLES.md) | CAD 141 + CAD 59 = CAD 200 | Reject the answer claiming CAD 210 |
-| [EV-13](ai-evaluation/WORKED_EXAMPLES.md) | Account ID ZX-00042 must be fully redacted | Reject the output exposing the ID |
-| [PAIR-08](ai-evaluation/PAIRED_COMPARISONS.md) | No workflow test was run | Neither response is acceptable: both invent completed results |
-| [PAIR-09](ai-evaluation/PAIRED_COMPARISONS.md) | Spanish source says a payment awaits approval | Prefer the translation that preserves the pending status |
-| [EX-006](back-office-case-study/outputs/exception_register.csv) | Source CAD 14,200; processed extract CAD 12,400 | Leave the discrepancy open for verification |
+| [EV-04](ai-evaluation/WORKED_EXAMPLES.md) | Approved adjustments of CAD 90 and CAD 10 | The candidate reports CAD 90, leaving out CAD 10 |
+| [EV-10](ai-evaluation/WORKED_EXAMPLES.md) | A workflow export exists, but no run record | A cautious response is acceptable; deployment is unverified |
+| [EV-13](ai-evaluation/WORKED_EXAMPLES.md) | An account identifier must be fully redacted | The candidate exposes the identifier |
+| [EV-27](ai-evaluation/WORKED_EXAMPLES.md) | Spanish source: *El pago fue rechazado* | An English answer incorrectly says the payment was approved |
+| [PAIR-08](ai-evaluation/PAIRED_COMPARISONS.md) | No test was executed | Neither answer is acceptable because both claim results |
 
-These are **AI-assisted reference assessments** for fictional examples, not independent ratings I have completed.
+These decisions are **AI-assisted reference examples**, not my completed independent ratings.
 
-## What is available
+## Evidence you can inspect
 
-| Work sample | Inspectable material | Actual verification |
+| Component | Included | Verification boundary |
 |---|---|---|
-| [AI response casebook](ai-evaluation/README.md) | 30 supplied sources, candidate outputs, proposed verdicts, scores and corrections; five Spanish-language cases | Automated schema/consistency checks; **no recorded personal review** |
-| [Paired evaluations](ai-evaluation/PAIRED_COMPARISONS.md) | 10 A/B exercises, including two Spanish pairs, one tie and one neither-acceptable pair | Reference preference and rationale; not a measured model comparison |
-| [Back-office reconciliation](back-office-case-study/README.md) | Two fictional 14-row files, a Python review, exception register and unit tests | Reproducible checks; 10 open exceptions, no automatic data corrections |
-| [Earlier document-review notes](case-studies/detailed-evaluation-notes.md) | Author-attributed account of earlier technical-document errors | Retrospective narrative; complete dated before/after evidence is unavailable |
+| [Individual responses](ai-evaluation/README.md) | 30 source/task/output cases and a [rubric](ai-evaluation/rubric.md) | Constructed examples; reference labels have not been personally adjudicated |
+| [Response comparisons](ai-evaluation/PAIRED_COMPARISONS.md) | Ten A/B pairs, including two Spanish-source comparisons | Not actual head-to-head model results |
+| [Document reconciliation](back-office-case-study/README.md) | Fictional 14-row source and export, Python script, ten open exceptions | Reproducible local exercise, not employer records |
+| [Earlier review notes](case-studies/detailed-evaluation-notes.md) | Retrospective technical-document examples | Full dated before/after evidence is not available |
 
-### What the casebook labels mean
+**To review without the answer key:** [individual prompts](ai-evaluation/unscored_cases.jsonl) · [A/B prompts](ai-evaluation/unscored_pairs.jsonl) · [blank personal review worksheet](ai-evaluation/OWNER_REVIEW_WORKSHEET.md).
 
-The initial reference set has **12 ACCEPT, 14 REJECT and 4 INSUFFICIENT_EVIDENCE** labels. Those four uncertainty cases contain appropriately cautious candidate answers. The revised data therefore distinguishes **candidate response acceptability** (16 ACCEPT, 14 REJECT) from the older reference category. These are counts of invented exercise labels, **not** accuracy statistics or independent annotator performance. See the [rubric](ai-evaluation/rubric.md).
+The original reference labels include four `INSUFFICIENT_EVIDENCE` cases whose **candidate answers appropriately refuse to guess**. Privacy scores are marked **N/A** when no privacy rule is tested. These are invented practice labels, not a model's accuracy or an annotator agreement rate.
 
-The [owner-review worksheet](ai-evaluation/OWNER_REVIEW_WORKSHEET.md) remains blank. The practical next step is a dated independent review of selected cases, recording any disagreement with the reference key rather than replacing the original.
-
-## Reproduce the mechanical checks
-
-From the repository root, with Python 3:
+## Reproduce the checks
 
 ```bash
 python ai-evaluation/scripts/validate_examples.py
+python ai-evaluation/scripts/prepare_review_inputs.py --check
 cd back-office-case-study
-python scripts/reconcile.py
 python -m unittest discover -s tests -v
+python scripts/reconcile.py
 ```
 
-[GitHub Actions](https://github.com/AthertHa-FinOps/AI-Output-Evaluation-Content-Accuracy-Review/actions/workflows/portfolio-checks.yml) checks the programmatic rules and generated outputs. It **cannot adjudicate whether every language judgment is correct**.
+[GitHub Actions](https://github.com/AthertHa-FinOps/AI-Output-Evaluation-Content-Accuracy-Review/actions/workflows/portfolio-checks.yml) checks schemas, reference-free inputs, reconciliation tests and committed outputs. It cannot establish the correctness of every language judgment.
 
-This is an AI-assisted, self-directed exercise, not paid AI annotation, professional model benchmarking or a live customer system. No real client records appear here.
+I used AI assistance for case construction, reference ratings, code and documentation. This is not paid annotation, a calibrated benchmark or a production system. My independent ratings have **not yet been recorded**.
 
-[Recruiter evidence map](RECRUITER_OVERVIEW.md) · [Worked decisions](ai-evaluation/WORKED_EXAMPLES.md) · [Evidence and ownership](EVIDENCE_AND_OWNERSHIP.md) · [Audit limitations](PORTFOLIO_AUDIT.md)
+[Recruiter overview](RECRUITER_OVERVIEW.md) · [Evidence boundaries](EVIDENCE_AND_OWNERSHIP.md) · [Audit and outstanding work](PORTFOLIO_AUDIT.md)
