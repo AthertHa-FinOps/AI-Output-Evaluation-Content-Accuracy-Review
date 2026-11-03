@@ -21,7 +21,7 @@ All ten findings have the disposition **OPEN - review required**. No source row 
 
 ## Checks used
 
-- Normalize case IDs for matching while preserving the original values.
+- Normalize case IDs for matching while preserving the original values; stop with an explicit error if source IDs are blank or collide after normalization.
 - Find missing source cases, processed cases without a source and repeated processing IDs.
 - Compare amounts, document types, customer references and received-document status.
 - Record the issue, observed value, severity and next step without assuming authorization to change a record.
@@ -33,7 +33,7 @@ All ten findings have the disposition **OPEN - review required**. No source row 
 | Source cases | [source_records.csv](data/source_records.csv) |
 | Processing export | [processing_export.csv](data/processing_export.csv) |
 | Reconciliation script | [reconcile.py](scripts/reconcile.py) |
-| Four unit tests | [test_reconcile.py](tests/test_reconcile.py) |
+| Six unit tests | [test_reconcile.py](tests/test_reconcile.py) |
 | Exception register | [exception_register.csv](outputs/exception_register.csv) |
 | Control summary | [control_summary.md](outputs/control_summary.md) |
 
@@ -46,6 +46,6 @@ python scripts/reconcile.py
 python -m unittest discover -s tests -v
 ```
 
-The unit tests check the expected counts, planted defects, unresolved status and normalization. The [published CI workflow](https://github.com/AthertHa-FinOps/AI-Output-Evaluation-Content-Accuracy-Review/actions/workflows/portfolio-checks.yml) runs the same sample checks.
+The six unit tests check expected counts, planted defects, unresolved status, normalization, and whether duplicate or blank source case IDs are rejected rather than silently replaced. The [published CI workflow](https://github.com/AthertHa-FinOps/AI-Output-Evaluation-Content-Accuracy-Review/actions/workflows/portfolio-checks.yml) runs the same sample checks.
 
 **Scope:** The records and defects are deliberately fictional. AI assisted with the code and documentation. The tests verify this defined exercise, not a live processing system.
