@@ -8,9 +8,9 @@ import argparse
 import json
 
 ROOT = Path(__file__).resolve().parents[1]
-CASE_FIELDS = ("id", "language", "category", "fictional_source",
+CASE_FIELDS = ("id", "source_language", "response_language", "category", "fictional_source",
                "task_requirement", "candidate_output")
-PAIR_FIELDS = ("id", "language", "task", "fictional_source",
+PAIR_FIELDS = ("id", "source_language", "response_language", "task", "fictional_source",
                "response_A", "response_B")
 SETS = (
     ("casebook.jsonl", "unscored_cases.jsonl", CASE_FIELDS),
