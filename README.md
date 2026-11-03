@@ -17,6 +17,18 @@ A fluent answer can contain the wrong figure, expose a fictional identifier or d
 
 **SOURCE → REQUIREMENT → OUTPUT → FINDING → DECISION**
 
+```mermaid
+flowchart LR
+  A["Fictional source"] --> B["Task requirement"]
+  B --> C["Candidate answer"]
+  C --> D{"Evidence sufficient?"}
+  D -->|No| E["Insufficient evidence; request context"]
+  D -->|Yes| F{"Supported and compliant?"}
+  F -->|Yes| G["ACCEPT"]
+  F -->|No| H["REJECT; document correction"]
+```
+
+
 | Sample | Source and requirement | Candidate statement | Reference action |
 |---|---|---|---|
 | EV-02 · arithmetic | 141 + 59 CAD | “CAD 210” | **Reject:** correct arithmetic is CAD 200 |
@@ -32,7 +44,7 @@ In real estate transaction work I compare agreements, changes, supporting record
 
 **English and Spanish.** The structured set includes five Spanish-language source cases and three Spanish paired comparisons. Those reference judgments still require independent personal review before being described as my bilingual annotation results.
 
-[One-page recruiter evidence summary](RECRUITER_OVERVIEW.md) · [Evaluation rubric](ai-evaluation/rubric.md) · [Evidence and ownership boundaries](EVIDENCE_AND_OWNERSHIP.md) · [Quality audit](PORTFOLIO_AUDIT.md)
+[One-page recruiter evidence summary](RECRUITER_OVERVIEW.md) · [Two-minute walkthrough script](DEMO_WALKTHROUGH.md) · [Evaluation rubric](ai-evaluation/rubric.md) · [Evidence and ownership boundaries](EVIDENCE_AND_OWNERSHIP.md) · [Quality audit](PORTFOLIO_AUDIT.md)
 
 All new data is fictional, and AI assisted with generation, code and editorial drafting. No client data, production annotation work, blinded benchmark, second-rater study or commercial performance claims are represented.
 
