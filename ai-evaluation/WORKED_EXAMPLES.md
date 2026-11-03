@@ -62,6 +62,16 @@ The cases below come from the fictional [evaluation reference set](casebook.json
 
 **Next action:** Keep both records and review identity, versions and history before approving any deletion or merge.
 
+## EV-27 | Spanish payment status reversed
+
+**Spanish source:** "El pago fue rechazado."
+
+**Constructed English answer:** "The payment was approved."
+
+**AI reference verdict:** REJECT. *Rechazado* means *rejected*. The answer reverses the outcome of the payment.
+
+**Next action:** Use "The payment was rejected." Keep the final status tied to the original Spanish source.
+
 ## PAIR-09 | Spanish approval status
 
 **Source:** "El pago está pendiente de aprobación."
