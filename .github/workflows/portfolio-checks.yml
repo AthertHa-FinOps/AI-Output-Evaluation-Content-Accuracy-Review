@@ -15,6 +15,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Check evaluation schema and fixed anchors
+        run: python ai-evaluation/scripts/validate_examples.py
+      - name: Check internal Markdown links
+        run: python ai-evaluation/scripts/check_links.py
       - name: Check synthetic reconciliation and review expectations
         run: |
           cd back-office-case-study

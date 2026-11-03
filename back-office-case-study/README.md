@@ -38,4 +38,4 @@ Source and processing counts are both **14**, but the export has **13 distinct c
 
 Every exception remains **OPEN - review required**. A duplicate might be a legitimate amendment; an unmatched processed record might come from another intake system; a wrong amount needs supporting documents. No automatic correction is presented as a completed transaction.
 
-AI assisted code and text drafting. I specified the sample review rules and checked the planted defects against the outputs. Four automated tests passed locally. This supports only a small designed example, not paid programming, current securities/insurance operations, production control systems or real-world error-rate claims.
+AI assisted code and text drafting. The repository states its review rules, provides the planted synthetic defects and includes four automated tests that check the expected outputs; those tests passed on the published CI workflow. This supports only a small designed example, not paid programming, current securities/insurance operations, production control systems or real-world error-rate claims.

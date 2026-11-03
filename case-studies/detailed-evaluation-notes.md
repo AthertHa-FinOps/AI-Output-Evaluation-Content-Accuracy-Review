@@ -1,8 +1,8 @@
 # Detailed self-directed review examples
 
-These narrative and synthetic exercises describe observations from portfolio review, not employer assignments or commercial performance measurements.
+The first-person narrative below is an author-attributed description of earlier document review. Links to related repositories are provided, but each historical claim and correction has not been independently verified against a signed review log. Separate synthetic examples demonstrate the method; no paid evaluation work is implied.
 
-## A real example, including the parts that did not go well
+## Document-review narrative — including the parts that did not go well
 
 Over several months I built a technical portfolio documenting a cloud-cost investigation. I performed the analysis, created the evidence 
 artifacts, and used AI tools as a drafting and review assistant throughout the process while independently validating the final content.
