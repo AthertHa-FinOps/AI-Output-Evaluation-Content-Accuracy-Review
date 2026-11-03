@@ -1,23 +1,39 @@
-# Document quality, back-office reconciliation and AI output review
+# AI output evaluation, document verification and record-quality review
 
-**Hans Atherton | Self-directed, AI-assisted work samples | Ontario, Canada**
+**Hans Atherton | Evidence-based portfolio for AI evaluation and back-office quality roles**
 
-My paid background is in real estate transaction documentation, comparing supporting records and following up on discrepancies. These exercises demonstrate how I work with source evidence and exception reports. They are not client deliverables or claims of production technical experience.
+A fluent answer can contain the wrong figure, expose a fictional identifier or describe an untested system as live. This repository contains source-based review exercises, their reference decisions and reproducible record checks. My paid work is in regulated real estate transaction documentation and discrepancy follow-up; the exercises are **self-directed, AI-assisted and synthetic**, not employer assignments.
 
-## Inspect the work
+## Start with the evidence
 
-| Case study | Contents |
-|---|---|
-| [Back-office reconciliation](back-office-case-study/README.md) | Fictional source/processing CSVs, runnable Python checks, four unit tests, exception register and reconciled controls |
-| [AI evaluation batch](ai-evaluation/README.md) | Review rubric, four synthetic results and specific source-backed explanations |
-| [Detailed earlier review examples](case-studies/detailed-evaluation-notes.md) | Claims exceeding evidence, incorrect figures, image-caption mismatches and synthetic masking failures |
+| Work sample | What to inspect | Status |
+|---|---|---|
+| **[30-case evaluation batch](ai-evaluation/README.md)** | Fictional source, candidate output, four-dimension rubric, reference verdict and proposed correction; includes English and Spanish | AI-drafted reference set; **not independently rated by Hans** |
+| **[10 paired-response comparisons](ai-evaluation/PAIRED_COMPARISONS.md)** | A/B choices, a tie, a neither-acceptable case and evidence-based rationales | AI-drafted reference comparisons; human sign-off pending |
+| **[Back-office reconciliation](back-office-case-study/README.md)** | Original synthetic records, issue log, control totals, code and four automated tests | Reproducible technical demonstration |
+| **[Earlier review notes](case-studies/detailed-evaluation-notes.md)** | Longer narrative of evidence claims, misleading captions, calculation discrepancies and privacy examples | Author's narrative; independent provenance of every assertion is not established |
 
-**Reconciliation result:** 14 fictional source rows and 14 processing rows conceal two missing source cases, one unexpected export case, one duplicate group and other field/status discrepancies. The sample identifies 10 exceptions and leaves every one open for review. Four automated tests passed on the local preparation copy.
+## Evidence review in 60 seconds
 
-**Method:** Establish rules and source of truth, compare records without changing raw evidence, document each mismatch and identify the required correction or human decision.
+**SOURCE → REQUIREMENT → OUTPUT → FINDING → DECISION**
 
-**Paid background:** 13+ years of real estate transaction documentation, deadlines and third-party follow-up; earlier financial and pension work is historical. Bilingual English and Spanish.
+| Sample | Source and requirement | Candidate statement | Reference action |
+|---|---|---|---|
+| EV-02 · arithmetic | 141 + 59 CAD | “CAD 210” | **Reject:** correct arithmetic is CAD 200 |
+| EV-10 · deployment | Export exists; no live run log | “Cannot verify production deployment” | **Insufficient evidence:** request run records rather than invent deployment |
+| EV-13 · privacy | Fully redact fictional ZX-00042 | Exposes ZX-00042 | **Reject:** redact identifier |
+| PAIR-08 · evidence | Test has not run | Both answers assert successful testing | **Neither:** both unsupported |
 
-**AI assistance and boundaries:** AI tools helped draft the code, synthetic examples and documentation. Checks and limitations are visible in the work sample. These are not paid AI annotation assignments, production software deployments or measured commercial quality results. All created records are fictional; no client information is included.
+The reference judgments are generated practice material, **not an independently administered evaluation of model quality, a hiring assessment or a claimed accuracy rate**. The evaluation script checks dataset structure and consistency, not whether a human agrees with every decision.
 
-[Technical AWS investigation](https://github.com/AthertHa-FinOps/aws-finops-cost-allocation-investigation) is a separate self-directed project.
+## Why this relates to my paid experience
+
+In real estate transaction work I compare agreements, changes, supporting records and required documents; trace missing or contradictory information; and coordinate follow-up before deadlines. The portfolio exercises the adjacent discipline of asking what a claim or record actually supports, and refusing unsupported corrections.
+
+**English and Spanish.** The structured set includes five Spanish-language source cases and three Spanish paired comparisons. Those reference judgments still require independent personal review before being described as my bilingual annotation results.
+
+[One-page recruiter evidence summary](RECRUITER_OVERVIEW.md) · [Evaluation rubric](ai-evaluation/rubric.md) · [Evidence and ownership boundaries](EVIDENCE_AND_OWNERSHIP.md) · [Quality audit](PORTFOLIO_AUDIT.md)
+
+All new data is fictional, and AI assisted with generation, code and editorial drafting. No client data, production annotation work, blinded benchmark, second-rater study or commercial performance claims are represented.
+
+Other [CRM data-quality portfolio](https://github.com/AthertHa-FinOps/crm-automation-data-quality-portfolio) · [AWS cost allocation investigation](https://github.com/AthertHa-FinOps/aws-finops-cost-allocation-investigation)
