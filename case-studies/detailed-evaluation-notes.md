@@ -5,7 +5,7 @@ The first-person narrative below is an author-attributed description of earlier 
 ## Document-review narrative — including the parts that did not go well
 
 Over several months I built a technical portfolio documenting a cloud-cost investigation. I performed the analysis, created the evidence 
-artifacts, and used AI tools as a drafting and review assistant throughout the process while independently validating the final content.
+artifacts, and used AI tools as a drafting and review assistant throughout the process while checking the resulting claims against the available artifacts.
 
 The executive summary and full technical investigation are available here:
 
@@ -56,9 +56,9 @@ need deliberate review.
 
 ---
 
-## The framework I built to stop it recurring
+## Evidence labels used in the review
 
-I built an evidence-labelling system and applied it to claims and images in the technical portfolio:
+The following labels distinguish what was actually captured, what ran and what remains illustrative or proposed:
 
 | Label | Meaning |
 | --- | --- |
@@ -68,7 +68,7 @@ I built an evidence-labelling system and applied it to claims and images in the 
 | **Modelled** | Scenario reasoning without underlying executed data |
 | **Methodology** | Design, process, or provenance documentation |
 
-The label controls how strongly I can describe the evidence.
+Each label limits what the evidence can support.
 
 Past tense is reserved for things actually captured or executed. Demonstrations are described as demonstrations. Modelled scenarios remain 
 conditional. Claims that cannot be verified are not presented as completed results.
