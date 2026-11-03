@@ -1,46 +1,51 @@
-# AI response review: fictional casebook
+# Source-based response evaluation exercises
 
-Thirty source-and-candidate-response exercises are organized by issue type. Each includes the supplied evidence, task, proposed verdict, rationale and follow-up. **The keys were drafted with AI assistance and have not been independently scored by me.**
+The casebook contains **30 constructed fictional candidate responses** with task instructions, sources, AI-assisted reference judgments, explanations and proposed corrections. The pairs contain **10 constructed A/B comparisons**. These are not captured results from named LLMs or paid annotation tasks.
 
-## Open a specific decision
+## Examples to inspect
 
-- [EV-02](WORKED_EXAMPLES.md): the source amounts total CAD 200, but the output claims CAD 210
-- [EV-04](casebook.jsonl): the output omits an approved CAD 10 adjustment and reports the wrong combined amount
-- [EV-10](WORKED_EXAMPLES.md): a workflow export does not establish live deployment
-- [EV-13](WORKED_EXAMPLES.md): the output reproduces a fictional account ID that should be redacted
-- [EV-19](casebook.jsonl): the answer omits a confidence label and claims reconciliation without evidence
-- [EV-22](WORKED_EXAMPLES.md): an email match does not authorize immediate deletion
-- [PAIR-09](PAIRED_COMPARISONS.md): a Spanish pending-approval statement must not become an approved status
+| Case | Review issue | Source-based result |
+|---|---|---|
+| **EV-02** | Arithmetic | CAD 141 + CAD 59 = CAD 200, not CAD 210 |
+| **EV-04** | Missing adjustment | CAD 90 + CAD 10 = CAD 100, not CAD 90 |
+| **EV-10** | Evidence status | An export without a run log does not establish deployment; the cautious response is acceptable |
+| **EV-13** | Redaction | Account ID ZX-00042 was exposed despite a masking requirement |
+| **EV-19** | Instructions and grounding | The answer omits the confidence label and claims reconciliation without evidence |
+| **EV-22** | Duplicate handling | A shared email is not sufficient grounds for immediate deletion |
+| **EV-27** | Spanish meaning | *Rechazado* means rejected, not approved |
+| **EV-30** | Spanish context | The sentence does not identify what was registered; the answer should not invent a subject |
 
-The complete [casebook](casebook.jsonl) retains the original fictional candidate output and AI-assisted reference rationale. [Paired comparisons](pairs.jsonl) use two answers for the same source. These are teaching examples rather than a benchmark set.
+The [reference casebook](casebook.jsonl) holds the proposed verdicts and score fields; [paired source/answers](pairs.jsonl) hold the proposed A/B preferences.
 
-## Case inventory
+## Rating rules
+
+The [rubric](rubric.md) checks grounding, instructions, privacy and completeness. Privacy is **null / N/A** for scored cases with no masking requirement; it should not earn two points just because privacy was not tested. Four cases with insufficient source evidence keep `reference_scores=null` and separately record an **ACCEPT** verdict for a cautious candidate response. These choices are AI-assisted practice keys, not completed personal annotation.
 
 | Category | Cases |
 |---|---:|
-| Arithmetic and reconciliation | 5 |
+| Arithmetic | 5 |
 | Evidence and deployment claims | 5 |
 | Privacy and masking | 5 |
 | Instruction following | 5 |
 | Records and identity | 5 |
-| Spanish-language meaning | 5 |
+| Spanish-source interpretation | 5 |
 | **Total** | **30** |
 
-The older `reference_decision` field records **12 ACCEPT, 14 REJECT and 4 INSUFFICIENT_EVIDENCE** outcomes. The new `candidate_response_verdict` field separately records **16 acceptable and 14 rejected candidate responses**. Four cautious answers correctly report insufficient underlying evidence. This distinction is explained in the [rubric](rubric.md); neither count represents human grading performance.
+There are five Spanish-source cases and two Spanish-source pairs. The English translations are illustrative, not independently certified bilingual evaluation.
 
-## Review the material independently
+## Complete an answer-key-free review
 
-1. Read the task and source, then the candidate answer **without opening the reference label**.
-2. Decide whether that answer is acceptable and identify the decisive evidence.
-3. Separately note whether the business fact is actually verifiable from the source.
-4. Compare with the AI-assisted reference, retaining any disagreement and the review date.
+1. Open [unscored_cases.jsonl](unscored_cases.jsonl) or [unscored_pairs.jsonl](unscored_pairs.jsonl). They contain sources and candidate responses but **no labels, scores or rationales**.
+2. Record your own verdict, source evidence, uncertainty and correction in the [review worksheet](OWNER_REVIEW_WORKSHEET.md).
+3. Only afterward compare with the [reference key](casebook.jsonl). Preserve disagreements and dates.
 
-The [owner-review worksheet](OWNER_REVIEW_WORKSHEET.md) remains blank. Do not turn draft references into claimed personal ratings.
+The blank worksheet is not evidence of an independent review. If you have seen an example's key already, that later exercise is not genuinely blind; label it a reference-hidden self-check instead.
 
-## Mechanical validation
+## Programmatic checks
 
 ```bash
 python ai-evaluation/scripts/validate_examples.py
+python ai-evaluation/scripts/prepare_review_inputs.py --check
 ```
 
-The validator checks schemas, score ranges, fixed examples and reference counts. It does not determine whether every subjective language judgment is correct. [Earlier exploratory examples](evaluation_batch.csv) remain a separate four-row file.
+The earlier [four exploratory rows](evaluation_batch.csv) now use separate `BATCH-..` IDs rather than reusing different `EV-..` case IDs. Structural checks cannot determine whether every subjective reference judgment is correct.
