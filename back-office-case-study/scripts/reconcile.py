@@ -22,7 +22,14 @@ def amount(value):
         return None
 
 def analyze(source_rows, export_rows):
-    source = {canonical(r["case_id"]): r for r in source_rows}
+    source = {}
+    for row in source_rows:
+        case_id = canonical(row["case_id"])
+        if not case_id:
+            raise ValueError("Blank source case ID; reconcile manually")
+        if case_id in source:
+            raise ValueError(f"Duplicate source case ID after normalization: {case_id}")
+        source[case_id] = row
     by_id = defaultdict(list)
     for r in export_rows:
         by_id[canonical(r["case_id"])].append(r)
@@ -76,13 +83,13 @@ def write_results(issues, controls):
         writer = csv.DictWriter(f, fieldnames=fields)
         writer.writeheader()
         writer.writerows(issues)
-    lines = ["# Reconciliation control summary", "", "**Synthetic training data.** No client records or production work.", "", "| Control | Observed |", "|---|---:|"]
+    lines = ["# Reconciliation control summary", "", "**Synthetic training data. No client records or production work.**", "", "| Control | Observed |", "|---|---:|"]
     for k in ("source_records", "export_records", "distinct_export_case_ids", "source_cases_absent_from_export", "export_case_ids_without_source", "duplicate_case_groups", "exceptions"):
         lines.append(f"| {k.replace('_', ' ').capitalize()} | {controls[k]} |")
     lines.extend(["", "## Exceptions by type", "", "| Category | Count |", "|---|---:|"])
     for k, value in controls["issue_counts"].items():
         lines.append(f"| {k} | {value} |")
-    lines.extend(["", "**Disposition:** No records were deleted, created, merged or auto-corrected. Every exception remains open for human review.", "", "**Control limitation:** Equal source/export row totals do not establish the same cases are present.", ""])
+    lines.extend(["", "All exceptions remain open. No source records were edited or deleted. Equal input row counts do not mean the same cases exist in both systems.", ""])
     (OUT / "control_summary.md").write_text("\n".join(lines), encoding="utf-8")
 
 def main():

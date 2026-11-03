@@ -1,29 +1,27 @@
-# Evidence map for AI evaluation and document-quality roles
+# Evidence map: AI response evaluation and document accuracy
 
-I have 13+ years of paid real estate transaction experience checking agreements and supporting records, finding discrepancies and coordinating corrections. This repository shows how those habits translate to fictional output-evaluation and processing-record exercises. The technical work is self-directed, not paid AI evaluation.
+My paid work is in real estate transaction documentation: reviewing agreements and supporting records, identifying mismatched information and coordinating corrections. This repository contains fictional exercises applying those same source-checking habits to AI responses and processing extracts. It is **not** paid AI evaluation experience.
 
-## Start with the records
+## Four checks to open
 
-| Review task | Specific evidence | Decision demonstrated |
+| Task | Source-backed example | What the reference identifies |
 |---|---|---|
-| Verify calculations | [EV-02](ai-evaluation/WORKED_EXAMPLES.md): source values CAD 141 and CAD 59; answer says CAD 210 | The reference rejects the answer and gives CAD 200 |
-| Challenge unsupported system claims | [EV-10](ai-evaluation/WORKED_EXAMPLES.md): workflow export exists; no live run record | Deployment remains unverified until execution evidence is available |
-| Apply privacy requirements | [EV-13](ai-evaluation/WORKED_EXAMPLES.md): fictional ZX-00042 must be redacted | The reference rejects the exposed identifier |
-| Preserve meaning across languages | [PAIR-09](ai-evaluation/PAIRED_COMPARISONS.md): "El pago está pendiente de aprobación" | Prefer "The payment is awaiting approval," not "was approved" |
-| Handle contradictory amounts | [EX-006](back-office-case-study/outputs/exception_register.csv): CAD 14,200 in source, CAD 12,400 in export | Hold the exception for supporting-record verification |
-| Avoid unauthorized record deletion | [EX-004](back-office-case-study/outputs/exception_register.csv): two processed rows for CASE-003 | Retain both pending a check of version history |
+| Arithmetic accuracy | [EV-02](ai-evaluation/WORKED_EXAMPLES.md): CAD 141 + CAD 59 | CAD 210 is wrong; the total is CAD 200 |
+| Information masking | [EV-13](ai-evaluation/WORKED_EXAMPLES.md): redact ZX-00042 | Exposing the ID violates the explicit redaction rule |
+| Bilingual meaning | [PAIR-09](ai-evaluation/PAIRED_COMPARISONS.md): Spanish payment pending approval | An English output saying "approved" reverses the status |
+| Document reconciliation | [EX-006](back-office-case-study/outputs/exception_register.csv): CAD 14,200 versus CAD 12,400 | Preserve the discrepancy and request authoritative evidence |
 
-## What can be reproduced
+Additional exercises address missing test evidence ([PAIR-08](ai-evaluation/PAIRED_COMPARISONS.md)), uncertain deployment claims ([EV-10](ai-evaluation/WORKED_EXAMPLES.md)) and possible duplicate records ([EV-22](ai-evaluation/WORKED_EXAMPLES.md)).
 
-- [Thirty fictional AI-response cases](ai-evaluation/README.md) with four-dimension scoring rules, evidence and proposed follow-ups
-- [Ten paired-response comparisons](ai-evaluation/PAIRED_COMPARISONS.md), including a tie and a case where neither answer is supported
-- [Four reconciliation unit tests](back-office-case-study/tests/test_reconcile.py) checking counts, planted defects, unresolved exceptions and normalization on the fictional records
-- [GitHub Actions checks](https://github.com/AthertHa-FinOps/AI-Output-Evaluation-Content-Accuracy-Review/actions/workflows/portfolio-checks.yml) for the evaluation schema, relative links and reconciliation outputs
+## What can be repeated
 
-## How to assess this work in an interview
+- [Thirty fictional cases](ai-evaluation/README.md) with explicit source, candidate output, proposed response verdict and dimension scores where applicable
+- [Ten paired comparisons](ai-evaluation/PAIRED_COMPARISONS.md), including two Spanish examples, one tie and one case where neither answer is defensible
+- [Processing-record checks](back-office-case-study/README.md) with 14 source and 14 export rows, 10 open exceptions and automated tests
+- [Automated verification](https://github.com/AthertHa-FinOps/AI-Output-Evaluation-Content-Accuracy-Review/actions/workflows/portfolio-checks.yml) of data schemas, anchored examples, internal links and synthetic reconciliation outputs
 
-Choose a source record and ask what the evidence permits. For a definite arithmetic error, the next step is a source-backed correction. For a duplicate, an approval status or a deployment claim, the answer may be to preserve the record and request more evidence. The [walkthrough outline](DEMO_WALKTHROUGH.md) links the examples.
+**How to interview me on this work:** Select a case without showing the reference answer. Ask which statement is supported, what needs correcting and what evidence would change the decision.
 
-**Evidence boundary:** The evaluation verdicts and paired preferences are AI-drafted practice keys, not my completed independent ratings. The [owner-review worksheet](ai-evaluation/OWNER_REVIEW_WORKSHEET.md) remains blank. The reconciliation is an executed synthetic example, not a live enterprise process.
+The current reference judgments were AI-drafted, and the [independent owner-review worksheet](ai-evaluation/OWNER_REVIEW_WORKSHEET.md) is blank. The reconciliation is runnable on fictional data. Neither is a verified annotation contract, calibrated evaluation metric or production system.
 
-[Main README](README.md) · [Rubric](ai-evaluation/rubric.md) · [Evidence classification](EVIDENCE_AND_OWNERSHIP.md)
+[Portfolio overview](README.md) · [Rubric](ai-evaluation/rubric.md) · [Evidence classification](EVIDENCE_AND_OWNERSHIP.md)

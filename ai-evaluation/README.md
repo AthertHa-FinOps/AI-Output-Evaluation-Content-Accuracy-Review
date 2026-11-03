@@ -1,23 +1,18 @@
-# AI-response evaluation casebook
+# AI response review: fictional casebook
 
-Thirty fictional source-and-answer cases are organized by issue type, with a proposed verdict, rationale, corrective action and four-dimension rubric where the evidence permits scoring. **The reference decisions were drafted with AI assistance; I have not yet recorded independent personal ratings.**
+Thirty source-and-candidate-response exercises are organized by issue type. Each includes the supplied evidence, task, proposed verdict, rationale and follow-up. **The keys were drafted with AI assistance and have not been independently scored by me.**
 
-## Start with a decision
+## Open a specific decision
 
-- [EV-02](WORKED_EXAMPLES.md): two source amounts total CAD 200, but the candidate answer says CAD 210
-- [EV-10](WORKED_EXAMPLES.md): a workflow export exists without evidence of a live deployment
-- [EV-13](WORKED_EXAMPLES.md): a fictional account ID is reproduced despite an explicit redaction requirement
-- [EV-22](WORKED_EXAMPLES.md): matching email addresses do not authorize deleting a record
-- [PAIR-09](PAIRED_COMPARISONS.md): a Spanish approval status must remain pending in English
+- [EV-02](WORKED_EXAMPLES.md): the source amounts total CAD 200, but the output claims CAD 210
+- [EV-04](casebook.jsonl): the output omits an approved CAD 10 adjustment and reports the wrong combined amount
+- [EV-10](WORKED_EXAMPLES.md): a workflow export does not establish live deployment
+- [EV-13](WORKED_EXAMPLES.md): the output reproduces a fictional account ID that should be redacted
+- [EV-19](casebook.jsonl): the answer omits a confidence label and claims reconciliation without evidence
+- [EV-22](WORKED_EXAMPLES.md): an email match does not authorize immediate deletion
+- [PAIR-09](PAIRED_COMPARISONS.md): a Spanish pending-approval statement must not become an approved status
 
-The full [casebook](casebook.jsonl) preserves each fictional source, task, candidate output, proposed decision, scoring fields, rationale and follow-up. [Response pairs](pairs.jsonl) provide two alternatives against the same source.
-
-## How to review a case
-
-1. Read the task and fictional source before looking at the reference decision.
-2. Check the response against the [rubric](rubric.md) for grounding, instructions, privacy and completeness.
-3. Record a supported decision or identify what evidence is missing.
-4. Compare your finding with the reference key afterward. Record any disagreement in the [owner worksheet](OWNER_REVIEW_WORKSHEET.md).
+The complete [casebook](casebook.jsonl) retains the original fictional candidate output and AI-assisted reference rationale. [Paired comparisons](pairs.jsonl) use two answers for the same source. These are teaching examples rather than a benchmark set.
 
 ## Case inventory
 
@@ -26,19 +21,26 @@ The full [casebook](casebook.jsonl) preserves each fictional source, task, candi
 | Arithmetic and reconciliation | 5 |
 | Evidence and deployment claims | 5 |
 | Privacy and masking | 5 |
-| Instruction-following | 5 |
+| Instruction following | 5 |
 | Records and identity | 5 |
 | Spanish-language meaning | 5 |
 | **Total** | **30** |
 
-Reference verdicts: **12 ACCEPT, 14 REJECT, 4 INSUFFICIENT_EVIDENCE**. The ten paired comparisons include **two Spanish-language pairs**.
+The older `reference_decision` field records **12 ACCEPT, 14 REJECT and 4 INSUFFICIENT_EVIDENCE** outcomes. The new `candidate_response_verdict` field separately records **16 acceptable and 14 rejected candidate responses**. Four cautious answers correctly report insufficient underlying evidence. This distinction is explained in the [rubric](rubric.md); neither count represents human grading performance.
 
-## Structural verification
+## Review the material independently
 
-From the repository root with Python 3:
+1. Read the task and source, then the candidate answer **without opening the reference label**.
+2. Decide whether that answer is acceptable and identify the decisive evidence.
+3. Separately note whether the business fact is actually verifiable from the source.
+4. Compare with the AI-assisted reference, retaining any disagreement and the review date.
+
+The [owner-review worksheet](OWNER_REVIEW_WORKSHEET.md) remains blank. Do not turn draft references into claimed personal ratings.
+
+## Mechanical validation
 
 ```bash
 python ai-evaluation/scripts/validate_examples.py
 ```
 
-The script checks IDs, fields, selected example anchors, score ranges and distribution. It does not determine whether every reference judgment is correct. The [four earlier exploratory examples](evaluation_batch.csv) remain available separately.
+The validator checks schemas, score ranges, fixed examples and reference counts. It does not determine whether every subjective language judgment is correct. [Earlier exploratory examples](evaluation_batch.csv) remain a separate four-row file.

@@ -28,6 +28,19 @@ class ReconciliationTests(unittest.TestCase):
         self.assertTrue(all(i["disposition"] == "OPEN - review required" for i in self.issues))
         self.assertEqual({i["case_id"] for i in self.issues if i["issue_type"] == "SOURCE_NOT_IN_EXPORT"}, {"CASE-011", "CASE-014"})
 
+    def test_duplicate_source_case_id_is_not_silently_overwritten(self):
+        source = [
+            {"case_id": "CASE-001", "customer_ref": "C-1", "document_type": "Agreement", "amount_cad": "100"},
+            {"case_id": " case-001 ", "customer_ref": "C-2", "document_type": "Waiver", "amount_cad": "200"},
+        ]
+        with self.assertRaisesRegex(ValueError, "Duplicate source case ID"):
+            analyze(source, [])
+
+    def test_blank_source_case_id_is_held(self):
+        source = [{"case_id": " ", "customer_ref": "C-1", "document_type": "Agreement", "amount_cad": "100"}]
+        with self.assertRaisesRegex(ValueError, "Blank source case ID"):
+            analyze(source, [])
+
     def test_normalization(self):
         self.assertEqual(canonical(" case-002 "), "CASE-002")
         self.assertEqual(amount("14200"), amount("14200.00"))

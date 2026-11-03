@@ -18,7 +18,7 @@ The cases below come from the fictional [evaluation reference set](casebook.json
 
 **Proposed answer:** "There is insufficient evidence to establish production deployment."
 
-**Reference verdict:** INSUFFICIENT_EVIDENCE for the deployment fact. The cautious answer correctly reflects what is known.
+**Candidate response verdict:** ACCEPT. **Underlying fact status:** Insufficient evidence to verify deployment. The candidate correctly avoids claiming a live run.
 
 **Next action:** Request live run records and deployment evidence instead of treating the export as proof of operation.
 
@@ -52,4 +52,4 @@ The cases below come from the fictional [evaluation reference set](casebook.json
 
 **Reference preference:** B. The source describes a pending decision, not an approval already granted.
 
-The full JSONL files contain the original inputs, reference rationale and scoring fields. A dated independent review of these judgments can be recorded in the [owner worksheet](OWNER_REVIEW_WORKSHEET.md).
+The full JSONL files contain the original inputs, response verdict, mixed historical reference label, rationale and scoring fields where applicable. A dated independent review of these judgments can be recorded in the [owner worksheet](OWNER_REVIEW_WORKSHEET.md).

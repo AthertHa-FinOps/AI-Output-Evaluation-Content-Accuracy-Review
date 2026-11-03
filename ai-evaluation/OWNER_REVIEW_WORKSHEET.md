@@ -1,16 +1,16 @@
 # Independent owner review worksheet — not yet completed
 
-**Purpose:** Record Hans's actual decisions, independently of the AI-drafted answer key. Until entries are completed, the portfolio cannot substantiate claims of personally scoring thirty cases or ten comparisons.
+**Purpose:** Record Hans's actual decisions, independently of the AI-drafted answer key. Until entries are completed, the portfolio cannot substantiate claims of independently scoring thirty cases or ten comparisons. The AI reference now separates cautious answers from the underlying missing-evidence state.
 
 ## Procedure
 
 1. Copy the task, source and candidate answer for each selected case into a working document **without opening the reference decision**.
-2. Make your own PASS/REJECT/INSUFFICIENT decision, give the evidence and suggest a correction.
+2. Mark the **candidate response** ACCEPT or REJECT, cite the source and propose any correction. Separately note when the underlying business fact cannot be verified.
 3. Only afterward compare with the generated key; record disagreement instead of silently altering your original answer.
 4. Check Spanish meaning directly for bilingual cases. Do not rely on a model-only translation to claim bilingual QA skill.
 5. Keep real run dates, reviewer identity and results. Leave fields blank until performed.
 
-| Case | Personal judgment (blank until done) | Evidence cited | Date reviewed | Difference from AI reference |
+| Case | Candidate ACCEPT/REJECT (blank until done) | Source evidence / unresolved fact | Date reviewed | Difference from AI reference |
 |---|---|---|---|---|
 | EV-02 arithmetic | | | | |
 | EV-09 conflicting source totals | | | | |

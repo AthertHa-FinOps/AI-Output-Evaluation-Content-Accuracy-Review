@@ -32,3 +32,5 @@ jobs:
           assert all(r["disposition"]=="OPEN - review required" for r in rows)
           print("Checked generated exception register")
           PY
+      - name: Verify regenerated outputs match the committed files
+        run: git diff --exit-code -- back-office-case-study/outputs
