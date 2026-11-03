@@ -6,7 +6,7 @@
 
 | Assignment type | Specific case | What a reviewer can check |
 |---|---|---|
-| Factual accuracy | [EV-04](ai-evaluation/README.md) | Two adjustments total CAD 100, not the reported CAD 90 |
+| Factual accuracy | [EV-04](ai-evaluation/WORKED_EXAMPLES.md) | Two adjustments total CAD 100, not the reported CAD 90 |
 | Privacy and instructions | [EV-13](ai-evaluation/WORKED_EXAMPLES.md) | A mandatory redaction was missed |
 | Grounded uncertainty | [EV-10](ai-evaluation/WORKED_EXAMPLES.md) | The answer correctly says the supplied evidence cannot prove deployment |
 | English/Spanish meaning | [PAIR-09](ai-evaluation/PAIRED_COMPARISONS.md) | *Pendiente de aprobación* must not become *approved* |
