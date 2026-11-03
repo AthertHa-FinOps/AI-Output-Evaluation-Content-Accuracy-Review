@@ -17,6 +17,8 @@ jobs:
           python-version: '3.12'
       - name: Check evaluation schema and fixed anchors
         run: python ai-evaluation/scripts/validate_examples.py
+      - name: Verify answer-key-free review inputs
+        run: python ai-evaluation/scripts/prepare_review_inputs.py --check
       - name: Check internal Markdown links
         run: python ai-evaluation/scripts/check_links.py
       - name: Check synthetic reconciliation and review expectations
