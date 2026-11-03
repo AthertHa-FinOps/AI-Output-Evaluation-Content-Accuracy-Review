@@ -31,7 +31,7 @@ The [rubric](rubric.md) checks grounding, instructions, privacy and completeness
 | Spanish-source interpretation | 5 |
 | **Total** | **30** |
 
-There are five Spanish-source cases and two Spanish-source pairs. The English translations are illustrative, not independently certified bilingual evaluation.
+There are five Spanish-source cases and two Spanish-source pairs. The files distinguish `source_language` from `response_language`; the examples use English candidate responses, including for Spanish inputs. The translations are illustrative, not independently certified bilingual evaluation.
 
 ## Complete an answer-key-free review
 
