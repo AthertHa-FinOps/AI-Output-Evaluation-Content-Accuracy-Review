@@ -1,27 +1,29 @@
-# Evidence map: AI response evaluation and document accuracy
+# AI response-review evidence for recruiters
 
-My paid work is in real estate transaction documentation: reviewing agreements and supporting records, identifying mismatched information and coordinating corrections. This repository contains fictional exercises applying those same source-checking habits to AI responses and processing extracts. It is **not** paid AI evaluation experience.
+**Relevant paid experience:** Real estate transaction documentation, source checks, conflicting information and follow-up with clients and third parties. **Not claimed:** Paid AI annotation, model benchmarking, evaluator calibration or quality-team leadership.
 
-## Four checks to open
+## Open these examples
 
-| Task | Source-backed example | What the reference identifies |
+| Assignment type | Specific case | What a reviewer can check |
 |---|---|---|
-| Arithmetic accuracy | [EV-02](ai-evaluation/WORKED_EXAMPLES.md): CAD 141 + CAD 59 | CAD 210 is wrong; the total is CAD 200 |
-| Information masking | [EV-13](ai-evaluation/WORKED_EXAMPLES.md): redact ZX-00042 | Exposing the ID violates the explicit redaction rule |
-| Bilingual meaning | [PAIR-09](ai-evaluation/PAIRED_COMPARISONS.md): Spanish payment pending approval | An English output saying "approved" reverses the status |
-| Document reconciliation | [EX-006](back-office-case-study/outputs/exception_register.csv): CAD 14,200 versus CAD 12,400 | Preserve the discrepancy and request authoritative evidence |
+| Factual accuracy | [EV-04](ai-evaluation/README.md) | Two adjustments total CAD 100, not the reported CAD 90 |
+| Privacy and instructions | [EV-13](ai-evaluation/WORKED_EXAMPLES.md) | A mandatory redaction was missed |
+| Grounded uncertainty | [EV-10](ai-evaluation/WORKED_EXAMPLES.md) | The answer correctly says the supplied evidence cannot prove deployment |
+| English/Spanish meaning | [PAIR-09](ai-evaluation/PAIRED_COMPARISONS.md) | *Pendiente de aprobación* must not become *approved* |
+| Pairwise preference | [PAIR-08](ai-evaluation/PAIRED_COMPARISONS.md) | Both candidates invent test results, so neither can be chosen |
+| Record controls | [EX-006](back-office-case-study/outputs/exception_register.csv) | The source/export amount mismatch remains unresolved |
 
-Additional exercises address missing test evidence ([PAIR-08](ai-evaluation/PAIRED_COMPARISONS.md)), uncertain deployment claims ([EV-10](ai-evaluation/WORKED_EXAMPLES.md)) and possible duplicate records ([EV-22](ai-evaluation/WORKED_EXAMPLES.md)).
+## Relevant roles and limits
 
-## What can be repeated
+| Role family | Portfolio supports | Missing evidence |
+|---|---|---|
+| AI Response Evaluator / factuality reviewer | Checking source support, arithmetic, privacy and stated constraints | Independently completed ratings on unseen material |
+| Text annotator / LLM response rater | Structured cases, rating dimensions, proposed rationales and preference labels | Annotation-platform work, calibration and measured consistency |
+| English–Spanish evaluator | Five Spanish-source cases and two Spanish-source pairs; paid bilingual communication experience is separate | Independently rated nuanced bilingual examples and professional language-review results |
+| AI response quality analyst / reviewer | An identifiable rubric and repeatable mechanical checks | Second-rater disagreements, batch QA metrics and professional adjudication experience |
 
-- [Thirty fictional cases](ai-evaluation/README.md) with explicit source, candidate output, proposed response verdict and dimension scores where applicable
-- [Ten paired comparisons](ai-evaluation/PAIRED_COMPARISONS.md), including two Spanish examples, one tie and one case where neither answer is defensible
-- [Processing-record checks](back-office-case-study/README.md) with 14 source and 14 export rows, 10 open exceptions and automated tests
-- [Automated verification](https://github.com/AthertHa-FinOps/AI-Output-Evaluation-Content-Accuracy-Review/actions/workflows/portfolio-checks.yml) of data schemas, anchored examples, internal links and synthetic reconciliation outputs
+All casebook candidates and paired responses were **constructed for this exercise**; no actual LLM model outputs were captured. The keys and rationales were drafted with AI assistance. A recruiter can inspect them, but they do not demonstrate that I scored the same cases independently.
 
-**How to interview me on this work:** Select a case without showing the reference answer. Ask which statement is supported, what needs correcting and what evidence would change the decision.
+The [answer-key-free input files](ai-evaluation/unscored_cases.jsonl) and [personal review worksheet](ai-evaluation/OWNER_REVIEW_WORKSHEET.md) are available for a subsequent actual review. That worksheet is still blank.
 
-The current reference judgments were AI-drafted, and the [independent owner-review worksheet](ai-evaluation/OWNER_REVIEW_WORKSHEET.md) is blank. The reconciliation is runnable on fictional data. Neither is a verified annotation contract, calibrated evaluation metric or production system.
-
-[Portfolio overview](README.md) · [Rubric](ai-evaluation/rubric.md) · [Evidence classification](EVIDENCE_AND_OWNERSHIP.md)
+[Overview](README.md) · [Rubric](ai-evaluation/rubric.md) · [Ownership notes](EVIDENCE_AND_OWNERSHIP.md)
