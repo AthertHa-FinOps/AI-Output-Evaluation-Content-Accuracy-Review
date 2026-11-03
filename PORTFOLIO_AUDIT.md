@@ -18,7 +18,7 @@ These counts are properties of a **constructed exercise**, not a benchmark, anno
 
 ## Corrections from the critical re-audit
 
-- Mark `candidate_output_origin` and `pair_origin` explicitly as constructed fictional material.
+- Mark `candidate_output_origin` and `pair_origin` explicitly as constructed fictional material. Record `source_language` separately from `response_language` so a Spanish source is not mistaken for a Spanish output.
 - Stop awarding privacy credit on tasks without a privacy requirement: use `null` (N/A) for the 21 scored non-privacy cases.
 - Keep candidate-response acceptability separate from the underlying insufficient-evidence state.
 - Give the four exploratory batch rows unique `BATCH-..` identifiers rather than reusing distinct `EV-..` case IDs.
