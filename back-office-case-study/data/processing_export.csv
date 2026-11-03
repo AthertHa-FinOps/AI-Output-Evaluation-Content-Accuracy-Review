@@ -1,0 +1,15 @@
+process_id,case_id,customer_ref,document_type,amount_cad,document_status
+PROC-001,CASE-001,C-001,Agreement,10700.00,Received
+PROC-002, case-002 ,C-002,Amendment,11400.00,Received
+PROC-003,CASE-003,C-003,Waiver,12100.00,Received
+PROC-004,CASE-004,C-004,Disclosure,12800.00,Missing
+PROC-005,CASE-005,C-005,Agreement,13500.00,Received
+PROC-006,CASE-006,C-006,Amendment,12400.00,Received
+PROC-007,CASE-007,C-777,Waiver,14900.00,Received
+PROC-008,CASE-008,C-008,Wavier,15600.00,Received
+PROC-009,CASE-009,C-009,Agreement,,Received
+PROC-010,CASE-010,C-010,Amendment,17000.00,Received
+PROC-012,CASE-012,C-012,Disclosure,18400.00,Received
+PROC-013,CASE-013,C-013,Agreement,19100.00,Received
+PROC-015,CASE-003,C-003,Waiver,12100.00,Received
+PROC-016,CASE-999,C-999,Agreement,19999.00,Received

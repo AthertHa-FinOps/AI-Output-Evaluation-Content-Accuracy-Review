@@ -1,0 +1,11 @@
+exception_id,case_id,process_id,issue_type,severity,source_value,observed_value,recommended_action,disposition
+EX-001,CASE-011,,SOURCE_NOT_IN_EXPORT,High,Source case exists,No processed record,Check queue or transmission history; do not invent a record,OPEN - review required
+EX-002,CASE-014,,SOURCE_NOT_IN_EXPORT,High,Source case exists,No processed record,Check queue or transmission history; do not invent a record,OPEN - review required
+EX-003,CASE-002,PROC-002,CASE_ID_FORMAT,Low,CASE-002, case-002 ,Normalize identifier only after source confirmation,OPEN - review required
+EX-004,CASE-003,"PROC-003,PROC-015",DUPLICATE_PROCESSING,High,One source case,2 processed rows,Hold both records; check for legitimate versioning before resolving,OPEN - review required
+EX-005,CASE-004,PROC-004,DOCUMENT_NOT_RECEIVED,High,Required document received,Missing,Hold completion pending document verification,OPEN - review required
+EX-006,CASE-006,PROC-006,AMOUNT_MISMATCH,High,14200.00,12400.00,Reconcile against supporting financial record,OPEN - review required
+EX-007,CASE-007,PROC-007,CUSTOMER_REFERENCE_MISMATCH,High,C-007,C-777,Confirm against authoritative customer record,OPEN - review required
+EX-008,CASE-008,PROC-008,DOCUMENT_TYPE_MISMATCH,Medium,Disclosure,Wavier,Confirm source document classification,OPEN - review required
+EX-009,CASE-009,PROC-009,INVALID_OR_MISSING_AMOUNT,High,16300.00,(blank),Hold amount for source-backed correction,OPEN - review required
+EX-010,CASE-999,PROC-016,EXPORT_NOT_IN_SOURCE,High,No matching source case,Processed record exists,Investigate origin before any deletion,OPEN - review required
