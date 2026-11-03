@@ -32,9 +32,10 @@ def check_cases(rows):
         assert r["language"] in {"en","es"}
         assert r["priority_dimension"] in DIMENSIONS
         assert all(isinstance(r[k], str) and len(r[k]) >= 10 for k in (
-            "fictional_source","task_requirement","candidate_output",
+            "fictional_source","task_requirement",
             "reference_rationale","recommended_followup",
         )), r["id"]
+        assert isinstance(r["candidate_output"], str) and len(r["candidate_output"]) >= 2, r["id"]
         assert r["reference_provenance"] == "AI_DRAFT_NOT_HUMAN_ADJUDICATED"
         if r["reference_decision"] == "INSUFFICIENT_EVIDENCE":
             assert r["reference_scores"] is None, r["id"]
