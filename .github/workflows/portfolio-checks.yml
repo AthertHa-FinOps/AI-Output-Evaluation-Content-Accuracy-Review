@@ -1,0 +1,30 @@
+name: Portfolio reconciliation checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  review-sample:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check synthetic reconciliation and review expectations
+        run: |
+          cd back-office-case-study
+          python -m unittest discover -s tests -v
+          python scripts/reconcile.py
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+          rows=list(csv.DictReader(Path("outputs/exception_register.csv").open(newline="")))
+          assert len(rows)==10, f"Expected 10 exceptions, found {len(rows)}"
+          assert all(r["disposition"]=="OPEN - review required" for r in rows)
+          print("Checked generated exception register")
+          PY
