@@ -8,10 +8,10 @@ In real estate transactions, I check agreements and supporting records for confl
 
 | Case | Evidence in the exercise | Issue to decide |
 |---|---|---|
-| [EV-04](ai-evaluation/README.md) | Approved adjustments of CAD 90 and CAD 10 | The candidate reports CAD 90, leaving out CAD 10 |
+| [EV-04](ai-evaluation/WORKED_EXAMPLES.md) | Approved adjustments of CAD 90 and CAD 10 | The candidate reports CAD 90, leaving out CAD 10 |
 | [EV-10](ai-evaluation/WORKED_EXAMPLES.md) | A workflow export exists, but no run record | A cautious response is acceptable; deployment is unverified |
 | [EV-13](ai-evaluation/WORKED_EXAMPLES.md) | An account identifier must be fully redacted | The candidate exposes the identifier |
-| [EV-27](ai-evaluation/README.md) | Spanish source: *El pago fue rechazado* | An English answer incorrectly says the payment was approved |
+| [EV-27](ai-evaluation/WORKED_EXAMPLES.md) | Spanish source: *El pago fue rechazado* | An English answer incorrectly says the payment was approved |
 | [PAIR-08](ai-evaluation/PAIRED_COMPARISONS.md) | No test was executed | Neither answer is acceptable because both claim results |
 
 These decisions are **AI-assisted reference examples**, not my completed independent ratings.
