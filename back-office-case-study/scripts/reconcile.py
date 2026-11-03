@@ -17,7 +17,8 @@ def canonical(value):
 
 def amount(value):
     try:
-        return Decimal((value or "").strip()).quantize(Decimal("0.01"))
+        raw = Decimal((value or "").strip())
+        return raw.quantize(Decimal("0.01")) if raw.is_finite() else None
     except (InvalidOperation, ValueError):
         return None
 
@@ -65,7 +66,7 @@ def analyze(source_rows, export_rows):
             elif amount(row["amount_cad"]) != amount(s["amount_cad"]):
                 flag(case_id, pid, "AMOUNT_MISMATCH", "High", s["amount_cad"], row["amount_cad"], "Reconcile against supporting financial record")
             if canonical(row["document_status"]) != "RECEIVED":
-                flag(case_id, pid, "DOCUMENT_NOT_RECEIVED", "High", "Required document received", row["document_status"], "Hold completion pending document verification")
+                flag(case_id, pid, "DOCUMENT_NOT_RECEIVED", "High", "Completion rule: status Received", row["document_status"], "Hold completion; verify document against the record")
     return issues, {
         "source_records": len(source_rows), "export_records": len(export_rows),
         "distinct_export_case_ids": len(by_id),

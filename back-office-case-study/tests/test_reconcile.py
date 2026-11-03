@@ -45,6 +45,8 @@ class ReconciliationTests(unittest.TestCase):
         self.assertEqual(canonical(" case-002 "), "CASE-002")
         self.assertEqual(amount("14200"), amount("14200.00"))
         self.assertIsNone(amount(""))
+        self.assertIsNone(amount("NaN"))
+        self.assertIsNone(amount("Infinity"))
 
 if __name__ == "__main__":
     unittest.main()
