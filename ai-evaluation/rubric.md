@@ -11,7 +11,7 @@ These are fictional tasks with **AI-assisted reference labels**. Read the task a
 | **Privacy** | Meets an actual masking/redaction requirement | Partial or ambiguous masking | Exposes an identifier the task explicitly requires masking |
 | **Completeness** | Includes enough to answer accurately | Omits a relevant but nonessential detail | Essential information is missing or misleading |
 
-**N/A (`null`) is not a score.** In this dataset, privacy is N/A on the **21 scored non-privacy tasks** because those tasks do not test masking. Awarding a privacy score of 2 when no privacy rule was given would make the reference ratings look more comprehensive than they are. Scores should not be summed into a single performance metric. A material grounding or masking failure can result in REJECT regardless of other scores.
+**N/A (`null`) is not a score.** In this dataset, privacy is N/A on the **21 scored non-privacy tasks** because those tasks do not test masking. Awarding a privacy score of 2 when no privacy rule was given would make the reference ratings look more comprehensive than they are. Scores should not be summed into a single performance metric. Grounding assesses what the response says; instructions assesses explicit format and process requirements, so an arithmetic error does not automatically create a second format violation. A mandatory redaction can violate both instructions and privacy. A material grounding or masking failure can result in REJECT regardless of other scores.
 
 ## Candidate response versus the underlying fact
 
