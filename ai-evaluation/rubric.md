@@ -19,7 +19,7 @@ The existing **30-case reference set** is fictional and AI-assisted. Ratings des
 4. If the source cannot establish the underlying fact, a careful refusal to guess may be **acceptable**. Record that factual uncertainty separately.
 5. For A/B comparisons, choose **A, B, TIE, or NEITHER**. For a close comparison, explain the small difference without making it sound decisive; do not invent a numerical preference-strength score unless defined by the task.
 
-The legacy `reference_decision` field conflates candidate-response acceptability with missing evidence. The `candidate_response_verdict` field separates the response decision: **16 ACCEPT and 14 REJECT** in this constructed casebook. The older field has **12 ACCEPT, 14 REJECT, and four INSUFFICIENT_EVIDENCE** entries. Those four responses reasonably withhold an unverified fact; they are **not four failed answers**.
+The legacy `reference_decision` field conflates response acceptability with missing evidence. The `candidate_response_verdict` field separates the response decision: **16 ACCEPT and 14 REJECT** in this constructed casebook. The older field has **12 ACCEPT, 14 REJECT, and four INSUFFICIENT_EVIDENCE** entries. Those four responses reasonably withhold an unverified fact; they are **not four failed answers**.
 
 ## Beyond the starter cases
 

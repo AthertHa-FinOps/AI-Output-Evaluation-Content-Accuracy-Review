@@ -24,7 +24,7 @@ The validators **cannot establish** the truth of every subjective reference judg
 
 ## Writing and source integrity
 
-The public README now uses **response under review** rather than calling the fictional output a job candidate. A consistent term, **reference rating**, describes the AI-assisted proposed decision. The repository's older field names (`candidate_output`, `reference_decision`) remain in machine-readable files for backward compatibility and are explained in the [rubric](ai-evaluation/rubric.md). The four legacy insufficient-evidence cases describe fact uncertainty and do not mean that cautious candidate responses failed.
+The public README now uses **response under review** rather than calling the fictional output a job candidate. A consistent term, **reference rating**, describes the AI-assisted proposed decision. The repository's older field names (`candidate_output`, `reference_decision`) remain in machine-readable files for backward compatibility and are explained in the [rubric](ai-evaluation/rubric.md). The four legacy insufficient-evidence cases describe fact uncertainty and do not mean that cautious responses failed.
 
 The new practice tasks include formal address in Spanish, Chilean vocabulary, unfulfilled conditions, near-tie preference judgments, format violations and unnecessary refusals. They have **no completed reviewer judgments**; writing original Spanish explanations and reviewing unseen model outputs remain actual work for the applicant.
 

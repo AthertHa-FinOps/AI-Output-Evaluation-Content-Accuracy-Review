@@ -9,11 +9,11 @@ import json
 ROOT = Path(__file__).resolve().parents[1]
 CASE_FIELDS = {
     "id", "source_language", "response_language", "category",
-    "source", "task", "response_under_review", "focus",
+    "source", "task", "response_under_review",
 }
 PAIR_FIELDS = {
     "id", "source_language", "response_language", "category",
-    "source", "task", "response_A", "response_B", "focus",
+    "source", "task", "response_A", "response_B",
 }
 REVIEW_COLUMNS = (
     "case_id", "review_kind", "set", "review_date",
