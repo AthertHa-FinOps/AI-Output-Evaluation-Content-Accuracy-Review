@@ -1,35 +1,30 @@
-# Scoring reference for constructed response cases
+# Response-review scoring guide
 
-These are fictional tasks with **AI-assisted reference labels**. Read the task and source before considering the proposed assessment. A response that sounds convincing can still get the figures, status or permission wrong.
+The existing **30-case reference set** is fictional and AI-assisted. Ratings describe those examples, not a measured evaluator or model accuracy score.
 
-## Score dimensions
-
-| Dimension | 2 | 1 | 0 |
+| Dimension | 2 — Meets requirement | 1 — Minor issue | 0 — Material failure |
 |---|---|---|---|
-| **Grounding** | Material statements follow the supplied source | Mostly supported but an important qualification is missing | A material claim contradicts or exceeds the evidence |
-| **Instructions** | Meets the stated task and essential constraints | Minor nonmaterial deviation | Breaks a material explicit requirement |
-| **Privacy** | Meets an actual masking/redaction requirement | Partial or ambiguous masking | Exposes an identifier the task explicitly requires masking |
-| **Completeness** | Includes enough to answer accurately | Omits a relevant but nonessential detail | Essential information is missing or misleading |
+| **Grounding / accuracy** | Claims match supplied source | Qualification missing but core claim correct | Contradiction or material unsupported claim |
+| **Instructions** | Follows required format, scope and task | Minor nonmaterial variation | Breaks a material explicit requirement |
+| **Privacy** | Complies with an applicable masking requirement | Incomplete or unclear masking | Exposes something explicitly required to be redacted |
+| **Completeness** | Gives enough to answer correctly | Omits a relevant but nonessential detail | Essential information missing or misleading |
 
-**N/A (`null`) is not a score.** In this dataset, privacy is N/A on the **21 scored non-privacy tasks** because those tasks do not test masking. Awarding a privacy score of 2 when no privacy rule was given would make the reference ratings look more comprehensive than they are. Scores should not be summed into a single performance metric. Grounding assesses what the response says; instructions assesses explicit format and process requirements, so an arithmetic error does not automatically create a second format violation. A mandatory redaction can violate both instructions and privacy. A material grounding or masking failure can result in REJECT regardless of other scores.
+**N/A is not a pass.** Privacy is `null` for the **21 scored, non-privacy cases**, because those tasks do not test redaction. Four other cases use `reference_scores: null` to indicate that the retained reference set does not assign dimension scores to its insufficient-evidence scenarios.
 
-## Candidate response versus the underlying fact
+## Apply the rubric
 
-The casebook has two related but different labels.
+1. Read the supplied source and the exact instruction before the response.
+2. Identify the decisive evidence and determine whether the *response under review* is acceptable.
+3. Rate each applicable dimension. Explain material failures with the conflicting source text or number; don't double-count every factual mistake as an instruction failure.
+4. If the source cannot establish the underlying fact, a careful refusal to guess may be **acceptable**. Record that factual uncertainty separately.
+5. For A/B comparisons, choose **A, B, TIE, or NEITHER**. For a close comparison, explain the small difference without making it sound decisive; do not invent a numerical preference-strength score unless defined by the task.
 
-- `candidate_response_verdict` assesses whether the candidate **response** follows the supplied task. Values: ACCEPT or REJECT.
-- `reference_decision` is a retained earlier reference field that mixes response decisions with the state of the underlying business evidence. Its value `INSUFFICIENT_EVIDENCE` refers to an unverified underlying fact, not automatically an unacceptable answer.
+The legacy `reference_decision` field conflates candidate-response acceptability with missing evidence. The `candidate_response_verdict` field separates the response decision: **16 ACCEPT and 14 REJECT** in this constructed casebook. The older field has **12 ACCEPT, 14 REJECT, and four INSUFFICIENT_EVIDENCE** entries. Those four responses reasonably withhold an unverified fact; they are **not four failed answers**.
 
-**EV-05, EV-10, EV-25 and EV-30** correctly say there is too little source evidence to resolve the requested fact or identify a subject. Their *candidate response* verdict is ACCEPT. Their `reference_scores` values remain `null`: no four-dimension score was assigned to these four reference examples. Do not interpret that as a zero or as four failed responses.
+## Beyond the starter cases
 
-For the other 26 cases, scored applicable dimensions range from 0 to 2. These are draft practice assessments, not validated gold labels. The repository contains constructed candidate answers, not model outputs captured from a production evaluation.
+The [additional practice tasks](practice/README.md) include over-refusal, a correct answer in the wrong format, near-tie responses, and more difficult English–Spanish wording. They intentionally have **no answer key**; any assessments must be personally recorded and are not yet present in the repository.
 
-## Comparing two responses
+Use the [personal review worksheet](OWNER_REVIEW_WORKSHEET.md) for honest dated review notes. For actual model responses, follow the [model-output capture procedure](REAL_OUTPUT_REVIEW_PROTOCOL.md) and preserve provenance and publication permission.
 
-Read both against the same source and task. Choose A, B, TIE or NEITHER. A stronger response must preserve the evidence, requested format and relevant privacy limits. If both answers invent a test result, neither is acceptable; stylistic fluency does not break the tie.
-
-## Limits and personal review
-
-The reference judgments were developed with AI assistance. No independent human pass, second-rater agreement, calibration threshold or model-quality statistic is established. Real evaluation contracts can specify a different rubric or a formal abstention procedure; those instructions would control the actual assignment.
-
-Use the [answer-key-free cases](unscored_cases.jsonl), [pairs](unscored_pairs.jsonl) and [blank owner worksheet](OWNER_REVIEW_WORKSHEET.md) to record an actual review before citing personal rating decisions.
+Automated validation confirms file structure and selected reference rules, not independent annotation quality or expert human agreement.
