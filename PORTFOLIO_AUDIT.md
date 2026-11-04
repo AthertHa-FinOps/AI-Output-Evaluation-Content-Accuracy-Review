@@ -1,45 +1,37 @@
-# Portfolio review: evidence, limits and release checks
+# Portfolio verification and remaining gaps
 
-**Review date:** November 3, 2026  
-**Intended roles:** Entry-level/contract AI response evaluator, text annotator, bilingual English–Spanish reviewer and factual-accuracy reviewer. Senior evaluator QA or annotation team leadership requires separate evidence.
+**Reviewed:** November 4, 2026. This file describes the repository's evidence boundaries. It is not a report of independently completed professional annotation.
 
-## What can be inspected
+## Contents and status
 
-| Material | What exists |
-|---|---|
-| Individual tasks | 30 constructed fictional candidate responses in six categories; five use Spanish source text |
-| Paired tasks | Ten constructed comparisons; two use Spanish source text |
-| AI-assisted reference labels | 16 ACCEPT / 14 REJECT candidate-response verdicts; the older mixed field also has four INSUFFICIENT_EVIDENCE cases |
-| Source-data reconciliation | 14 fictional source rows, 14 processing rows, ten open exceptions and six unit tests |
-| Independent personal evaluations | **None recorded**; the worksheet is blank |
-| Key-free review sets | Separate individual-case and paired-case files with no reference labels, scores or rationales |
+| Material | Amount | Status |
+|---|---:|---|
+| Original single-response cases | 30 | Fictional responses and AI-assisted reference ratings |
+| Original A/B comparisons | 10 | Fictional pairs and AI-assisted reference preferences |
+| Spanish-source cases / original pairs | 5 / 2 | Short illustrative English responses |
+| Additional harder individual / pair exercises | 8 / 4 | Unscored fictional tasks; no answer keys |
+| Personal review-log entries prepared | 52 | IDs only; ratings, rationales and dates left empty |
+| Captured runs of named models | 0 recorded | [Protocol and empty log](ai-evaluation/REAL_OUTPUT_REVIEW_PROTOCOL.md) provided |
+| Supporting reconciliation | 14 source and 14 export records; 10 flagged exceptions | Reproducible fictional processing example |
 
-These counts are properties of a **constructed exercise**, not a benchmark, annotation throughput or model error rate.
+A prepared form, file or worked reference example is not proof that the applicant performed independent grading. No model accuracy rate, annotator agreement rate, real-company case processing or paid AI evaluation task is claimed.
 
-## Corrections from the critical re-audit
+## Technical verification
 
-- Mark `candidate_output_origin` and `pair_origin` explicitly as constructed fictional material. Record `source_language` separately from `response_language` so a Spanish source is not mistaken for a Spanish output.
-- Stop awarding privacy credit on tasks without a privacy requirement: use `null` (N/A) for the 21 scored non-privacy cases.
-- Keep candidate-response acceptability separate from the underlying insufficient-evidence state.
-- Give the four exploratory batch rows unique `BATCH-..` identifiers rather than reusing distinct `EV-..` case IDs.
-- Add generated answer-key-free review files and an integrity check; **do not** present them as completed independent ratings.
-- Treat non-finite financial values as invalid and define the document-status check as an exercise rule, not a fact independently established by the source.
-- Preserve the earlier duplicate-source-ID guard and run output-diff checks for generated reconciliation files.
+The repository CI checks the existing reference-case schema, the 10 pair records, unscored copies, the additional practice-set structure, blank-or-filled review-log field validity, internal Markdown links and six reconciliation unit tests. It also regenerates reconciliation outputs and checks that the committed files match.
 
-## Tests and what they do not establish
+The validators **cannot establish** the truth of every subjective reference judgment, quality of English–Spanish translations, independent skill, production throughput, or model-system performance. Review the [GitHub Actions run history](.github/workflows/portfolio-checks.yml) for the final merged commit's actual result.
 
-The CI workflow checks schema and selected reference-score constraints, integrity of answer-key-free samples, six reconciliation tests, exact generated-output snapshots and internal Markdown links. Check [the run history](https://github.com/AthertHa-FinOps/AI-Output-Evaluation-Content-Accuracy-Review/actions/workflows/portfolio-checks.yml) for the published commit's actual result.
+## Writing and source integrity
 
-Automated checks cannot validate translation nuance in all scenarios, prove a second evaluator agrees, show that the author independently rated examples, detect every security issue or establish model quality.
+The public README now uses **response under review** rather than calling the fictional output a job candidate. A consistent term, **reference rating**, describes the AI-assisted proposed decision. The repository's older field names (`candidate_output`, `reference_decision`) remain in machine-readable files for backward compatibility and are explained in the [rubric](ai-evaluation/rubric.md). The four legacy insufficient-evidence cases describe fact uncertainty and do not mean that cautious responses failed.
 
-## Remaining credibility gaps
+The new practice tasks include formal address in Spanish, Chilean vocabulary, unfulfilled conditions, near-tie preference judgments, format violations and unnecessary refusals. They have **no completed reviewer judgments**; writing original Spanish explanations and reviewing unseen model outputs remain actual work for the applicant.
 
-1. No dated, personally authored first-pass judgments on unseen or reference-hidden examples.
-2. No captured response from a named model, prompt-run log, model version or real output benchmark.
-3. Only short fictional Spanish-source cases; nuanced bilingual competence has not been independently assessed in this repository.
-4. No professional calibration process, sampling analysis, second-rater comparison or documented disagreement resolution.
-5. The earlier technical-document review narrative lacks a complete claim-by-claim dated version trail.
+## Recruiter fit and limitations
 
-**Release wording:** A reproducible, AI-assisted set of fictional response-review exercises and a processing reconciliation example. Useful as a supplementary work sample for junior/contract roles; not evidence of paid AI annotation, independent accuracy or evaluator-lead experience.
+This is relevant supporting material for AI Response Evaluator, LLM text annotation, bilingual response rating, factual-accuracy review, junior response QA and training-data quality review. The processing-reconciliation exercise connects more directly to document accuracy and back-office QA work. Senior evaluator QA, calibration management or production evaluation engineering require additional evidence.
 
-[Main portfolio](README.md) · [Reviewer overview](RECRUITER_OVERVIEW.md) · [Ownership boundary](EVIDENCE_AND_OWNERSHIP.md) · [Blank review record](ai-evaluation/OWNER_REVIEW_WORKSHEET.md)
+For a stronger submission, the next action is to complete dated personal reviews (including original Spanish rationales) and, with permission, capture and evaluate responses generated by a named model. Keep each first decision and subsequent correction; do not present a generated or retrospective response as if it had been independently graded.
+
+[Main README](README.md) · [Reviewer role guide](RECRUITER_OVERVIEW.md) · [Authorship and scope](EVIDENCE_AND_OWNERSHIP.md)

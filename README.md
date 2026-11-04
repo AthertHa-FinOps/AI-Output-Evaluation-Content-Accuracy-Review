@@ -1,46 +1,58 @@
-# AI response checking | English and Spanish
+# AI response evaluation | English and Spanish
 
-**Hans Atherton | Stouffville, Ontario | Self-directed work sample**
+**Hans Atherton · Stouffville, Ontario, Canada · English / Spanish · [LinkedIn](https://www.linkedin.com/in/hans-atherton-82638234/)**
 
-In real estate transactions, I check agreements and supporting records for conflicting figures, missing details and statements that need correction. This portfolio applies those checks to **constructed fictional responses**. The examples are not captured outputs from a deployed model or client assignments.
+**Target roles:** AI Response Evaluator, LLM Text Annotator, Bilingual AI Evaluator, and Content Accuracy Reviewer. The record-review sample also supports document-quality and back-office QA applications.
 
-## Inspect a source and the proposed judgment
+This portfolio uses short, fictional response-review tasks: check an answer against a supplied source, apply a defined rating rule, and explain a correction or a decision to withhold judgment. The responses and reference ratings were developed with AI assistance; they are **not captured model outputs or my independently completed ratings**.
 
-| Case | Evidence in the exercise | Issue to decide |
+## One response, checked against its source
+
+**EV-04 — approved adjustments** · [full reference example](ai-evaluation/WORKED_EXAMPLES.md)
+
+| Source and task | Response under review | Reference rating |
 |---|---|---|
-| [EV-04](ai-evaluation/WORKED_EXAMPLES.md) | Approved adjustments of CAD 90 and CAD 10 | The candidate reports CAD 90, leaving out CAD 10 |
-| [EV-10](ai-evaluation/WORKED_EXAMPLES.md) | A workflow export exists, but no run record | A cautious response is acceptable; deployment is unverified |
-| [EV-13](ai-evaluation/WORKED_EXAMPLES.md) | An account identifier must be fully redacted | The candidate exposes the identifier |
-| [EV-27](ai-evaluation/WORKED_EXAMPLES.md) | Spanish source: *El pago fue rechazado* | An English answer incorrectly says the payment was approved |
-| [PAIR-08](ai-evaluation/PAIRED_COMPARISONS.md) | No test was executed | Neither answer is acceptable because both claim results |
+| Approved adjustments: **CAD 90 + CAD 10**. Report their combined amount. | “Approved adjustment: CAD 90.” | **Reject** — grounding 0/2; instructions 2/2; completeness 0/2; privacy N/A |
 
-These decisions are **AI-assisted reference examples**, not my completed independent ratings.
+**Reason:** The source contains two approved amounts totaling **CAD 100**. The response reports only CAD 90, so the total is wrong and one adjustment is omitted. It needs a corrected total, not an invented change to either source amount.
 
-## Evidence you can inspect
+*This worked rating is from the AI-assisted reference set, not a personal evaluation result.*
 
-| Component | Included | Verification boundary |
-|---|---|---|
-| [Individual responses](ai-evaluation/README.md) | 30 source/task/output cases and a [rubric](ai-evaluation/rubric.md) | Constructed examples; reference labels have not been personally adjudicated |
-| [Response comparisons](ai-evaluation/PAIRED_COMPARISONS.md) | Ten A/B pairs, including two Spanish-source comparisons | Not actual head-to-head model results |
-| [Document reconciliation](back-office-case-study/README.md) | Fictional 14-row source and export, Python script, ten open exceptions | Reproducible local exercise, not employer records |
-| [Earlier review notes](case-studies/detailed-evaluation-notes.md) | Retrospective technical-document examples | Full dated before/after evidence is not available |
+For bilingual review, see [PAIR-09](ai-evaluation/PAIRED_COMPARISONS.md): *El pago está pendiente de aprobación* must not be reported as already approved.
 
-**To review without the answer key:** [individual prompts](ai-evaluation/unscored_cases.jsonl) · [A/B prompts](ai-evaluation/unscored_pairs.jsonl) · [blank personal review worksheet](ai-evaluation/OWNER_REVIEW_WORKSHEET.md).
+## Portfolio samples
 
-The original reference labels include four `INSUFFICIENT_EVIDENCE` cases whose **candidate answers appropriately refuse to guess**. Privacy scores are marked **N/A** when no privacy rule is tested. These are invented practice labels, not a model's accuracy or an annotator agreement rate.
+| Review work | What to open |
+|---|---|
+| **30 single-response exercises** | [Source, response, and proposed ratings](ai-evaluation/README.md) · [Scoring rules](ai-evaluation/rubric.md) |
+| **10 A/B comparisons** | [Pair decisions](ai-evaluation/PAIRED_COMPARISONS.md), including two Spanish-source pairs, a tie, and a case where neither answer is acceptable |
+| **More difficult practice** | [Unscored exercises](ai-evaluation/practice/README.md) covering Spanish register and regional usage, format adherence, unnecessary refusals, and close A/B calls |
+| **Supporting record-quality work** | [Fictional processing reconciliation](back-office-case-study/README.md): two 14-row files, ten open exceptions, and automated tests |
 
-## Reproduce the checks
+## Relevant experience
+
+In paid real estate work, I review agreements, amendments, identity documents, and financial records, and follow up when source documents disagree. Earlier, as a **Project Associate / Analyst (Contract)** in HOOPP's QRM area (June 2005–June 2008), I checked pension accounts and calculations during successive system defect-remediation projects. Those are document-review and reconciliation responsibilities, **not paid AI annotation**.
+
+## Scope
+
+The 30 ratings and ten pair preferences are **AI-assisted references**. No independent first-pass ratings, professional agreement scores, or live model-output benchmark are recorded. I have not completed the [personal review record](ai-evaluation/OWNER_REVIEW_WORKSHEET.md). A [capture protocol](ai-evaluation/REAL_OUTPUT_REVIEW_PROTOCOL.md) is provided for future permitted evaluations of actual model responses; it does not represent completed work.
+
+[Recruiter role guide](RECRUITER_OVERVIEW.md) · [Evaluation examples](ai-evaluation/WORKED_EXAMPLES.md) · [Tests and limitations](PORTFOLIO_AUDIT.md)
+
+<details>
+<summary>Reproduce the repository checks</summary>
+
+From the repository root, with Python 3:
 
 ```bash
 python ai-evaluation/scripts/validate_examples.py
 python ai-evaluation/scripts/prepare_review_inputs.py --check
+python ai-evaluation/scripts/validate_practice.py
 cd back-office-case-study
 python -m unittest discover -s tests -v
 python scripts/reconcile.py
 ```
 
-[GitHub Actions](https://github.com/AthertHa-FinOps/AI-Output-Evaluation-Content-Accuracy-Review/actions/workflows/portfolio-checks.yml) checks schemas, reference-free inputs, reconciliation tests and committed outputs. It cannot establish the correctness of every language judgment.
+[GitHub Actions](.github/workflows/portfolio-checks.yml) checks the files, selected reference rules and reconciliation outputs. It does not determine whether every reference judgment is correct.
 
-I used AI assistance for case construction, reference ratings, code and documentation. This is not paid annotation, a calibrated benchmark or a production system. My independent ratings have **not yet been recorded**.
-
-[Recruiter overview](RECRUITER_OVERVIEW.md) · [Evidence boundaries](EVIDENCE_AND_OWNERSHIP.md) · [Audit and outstanding work](PORTFOLIO_AUDIT.md)
+</details>

@@ -1,27 +1,15 @@
-# Two-minute portfolio walkthrough
+# Two-minute recruiter walkthrough — outline only
 
-**Format:** A walkthrough outline. No video or live demonstration has been recorded.
+This is a speaking guide, not evidence that a video has been recorded or a personal review completed.
 
-## 0:00–0:20 | Connect the work to real estate records
+**0:00–0:25 | Show the review method.** Start at the [main README](README.md). EV-04 supplies CAD 90 and CAD 10 in approved adjustments; the fictional response states CAD 90. The AI-assisted reference rejects it because the combined amount is CAD 100.
 
-Open the [recruiter evidence map](RECRUITER_OVERVIEW.md).
+**0:25–0:55 | Check an evidence limit.** Open [EV-10](ai-evaluation/WORKED_EXAMPLES.md). A workflow export without an execution record does not prove a deployment. A cautious answer is appropriate; uncertainty is not automatically a defect.
 
-My paid work involves comparing real estate agreements, amendments and supporting records, identifying missing or conflicting details and coordinating corrections before deadlines. The cases here use fictional data to illustrate related review decisions.
+**0:55–1:20 | Discuss Spanish meaning.** Show [PAIR-09](ai-evaluation/PAIRED_COMPARISONS.md) and explain why *pendiente de aprobación* cannot be reported as approved. The [additional practice tasks](ai-evaluation/practice/README.md) include less obvious questions about formal address and regional wording. Do not claim they have been independently rated.
 
-## 0:20–0:45 | Check a definite error
+**1:20–1:40 | Connect paid work.** Briefly describe how agreements and amendments are checked in real estate transactions, or how pension-account discrepancies were checked and peer-reviewed at HOOPP. This paid work is different from model annotation.
 
-Open [EV-02](ai-evaluation/WORKED_EXAMPLES.md). The source amounts are CAD 141 and CAD 59; the proposed answer says CAD 210. Show the correct CAD 200 total and explain why the source figures must be checked before updating a document.
+**1:40–2:00 | Explain the boundary.** The example answers and reference ratings were prepared with AI assistance. The [personal review record](ai-evaluation/OWNER_REVIEW_WORKSHEET.md) remains uncompleted, and [real model-output capture](ai-evaluation/REAL_OUTPUT_REVIEW_PROTOCOL.md) is a procedure, not a claimed result.
 
-## 0:45–1:10 | Handle a discrepancy that cannot be guessed away
-
-Open [EX-006](back-office-case-study/outputs/exception_register.csv). The source lists CAD 14,200 and the processing export lists CAD 12,400. Both values remain visible, and the exception remains open pending supporting-record verification.
-
-## 1:10–1:35 | Compare two unsupported responses
-
-Open [PAIR-08](ai-evaluation/PAIRED_COMPARISONS.md). The source says no test has been run. Both proposed responses claim successful execution, so the reference preference is NEITHER. Explain which evidence would be needed to change the decision.
-
-## 1:35–2:00 | Explain the evidence status
-
-Open [the ownership summary](EVIDENCE_AND_OWNERSHIP.md). The reconciliation tests are runnable and the AI-response decisions are drafted reference keys. [Personal review decisions](ai-evaluation/OWNER_REVIEW_WORKSHEET.md) have not yet been entered.
-
-The walkthrough can be recorded after a genuine independent review and practice run. Use actual screen evidence and retain the original results; do not substitute the outline for a completed demonstration.
+When personal evaluations have genuinely been performed, replace the reference example with your own first-pass judgment and any documented disagreement with the reference.

@@ -1,14 +1,14 @@
 # Worked examples: source, finding and next action
 
-The cases below come from the fictional [evaluation reference set](casebook.jsonl) and [paired-response set](pairs.jsonl). These are AI-drafted reference decisions, not independently completed personal ratings.
+The cases below come from the fictional [evaluation reference set](casebook.jsonl) and [paired-response set](pairs.jsonl). These are AI-assisted reference ratings, not personally completed evaluations. The quoted responses are fictional.
 
 ## EV-02 | Incorrect arithmetic
 
 **Source:** Two amounts, CAD 141 and CAD 59.
 
-**Proposed answer:** "The total is CAD 210.00."
+**Response under review:** "The total is CAD 210.00."
 
-**Reference verdict:** REJECT. The arithmetic total is CAD 200.00.
+**Reference rating:** REJECT. The arithmetic total is CAD 200.00.
 
 **Next action:** Check the source values, correct the total, and review any other document using the incorrect figure.
 
@@ -16,9 +16,9 @@ The cases below come from the fictional [evaluation reference set](casebook.json
 
 **Source:** Two approved adjustments: CAD 90 and CAD 10.
 
-**Constructed answer:** "Approved adjustment: CAD 90."
+**Response under review:** "Approved adjustment: CAD 90."
 
-**AI reference verdict:** REJECT. The combined approved adjustment is CAD 100. The answer leaves out an entire approved component; this is a grounding and completeness error.
+**Reference rating:** REJECT. The combined approved adjustment is CAD 100. The answer leaves out an entire approved component; this is a grounding and completeness error.
 
 **Next action:** Recalculate against the two source items. Do not change either original amount.
 
@@ -26,9 +26,9 @@ The cases below come from the fictional [evaluation reference set](casebook.json
 
 **Source:** The checklist requires a confidence label, and no reconciled result is provided.
 
-**Constructed answer:** "All records reconciled."
+**Response under review:** "All records reconciled."
 
-**AI reference verdict:** REJECT. The answer lacks the required confidence label and claims completed reconciliation without a supporting result.
+**Reference rating:** REJECT. The answer lacks the required confidence label and claims completed reconciliation without a supporting result.
 
 **Next action:** Report that reconciliation status is unverified and include the requested confidence label, rather than inventing a completed result.
 
@@ -36,9 +36,9 @@ The cases below come from the fictional [evaluation reference set](casebook.json
 
 **Source:** A workflow export is available, but there is no production run log or system access.
 
-**Proposed answer:** "There is insufficient evidence to establish production deployment."
+**Response under review:** "There is insufficient evidence to establish production deployment."
 
-**Candidate response verdict:** ACCEPT. **Underlying fact status:** Insufficient evidence to verify deployment. The candidate correctly avoids claiming a live run.
+**Response rating:** ACCEPT. **Underlying fact status:** Insufficient evidence to verify deployment. The response correctly avoids claiming a live run.
 
 **Next action:** Request live run records and deployment evidence instead of treating the export as proof of operation.
 
@@ -46,9 +46,9 @@ The cases below come from the fictional [evaluation reference set](casebook.json
 
 **Source requirement:** Fully redact fictional account ID ZX-00042.
 
-**Proposed answer:** "ZX-00042"
+**Response under review:** "ZX-00042"
 
-**Reference verdict:** REJECT. The identifier is still visible.
+**Reference rating:** REJECT. The identifier is still visible.
 
 **Next action:** Replace the field with [REDACTED] and check the output against the masking requirement.
 
@@ -56,9 +56,9 @@ The cases below come from the fictional [evaluation reference set](casebook.json
 
 **Source:** Two fictional export rows use the same email address but have different timestamps and notes.
 
-**Proposed answer:** "Delete the later record immediately."
+**Response under review:** "Delete the later record immediately."
 
-**Reference verdict:** REJECT. Shared contact information does not establish which record is authoritative.
+**Reference rating:** REJECT. Shared contact information does not establish which record is authoritative.
 
 **Next action:** Keep both records and review identity, versions and history before approving any deletion or merge.
 
@@ -68,7 +68,7 @@ The cases below come from the fictional [evaluation reference set](casebook.json
 
 **Constructed English answer:** "The payment was approved."
 
-**AI reference verdict:** REJECT. *Rechazado* means *rejected*. The answer reverses the outcome of the payment.
+**Reference rating:** REJECT. *Rechazado* means *rejected*. The answer reverses the outcome of the payment.
 
 **Next action:** Use "The payment was rejected." Keep the final status tied to the original Spanish source.
 
@@ -82,4 +82,4 @@ The cases below come from the fictional [evaluation reference set](casebook.json
 
 **Reference preference:** B. The source describes a pending decision, not an approval already granted.
 
-The full JSONL files contain the original inputs, response verdict, mixed historical reference label, rationale and scoring fields where applicable. A dated independent review of these judgments can be recorded in the [owner worksheet](OWNER_REVIEW_WORKSHEET.md).
+The [source files](casebook.jsonl) retain the full tasks and ratings. Personal first-pass reviews, if performed, should be recorded separately in the [review log](owner_review_log_template.csv).

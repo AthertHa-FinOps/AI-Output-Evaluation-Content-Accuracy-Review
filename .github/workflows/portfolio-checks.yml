@@ -19,6 +19,8 @@ jobs:
         run: python ai-evaluation/scripts/validate_examples.py
       - name: Verify answer-key-free review inputs
         run: python ai-evaluation/scripts/prepare_review_inputs.py --check
+      - name: Validate additional practice cases and review templates
+        run: python ai-evaluation/scripts/validate_practice.py
       - name: Check internal Markdown links
         run: python ai-evaluation/scripts/check_links.py
       - name: Check synthetic reconciliation and review expectations

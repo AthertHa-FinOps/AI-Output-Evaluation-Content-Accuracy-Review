@@ -1,20 +1,20 @@
-# Comparing constructed candidate responses
+# A/B response comparisons
 
-Ten fictional A/B tasks show how a proposed preference can be based on the supplied source instead of tone or fluency. **The responses and preference keys were constructed with AI assistance, not captured from two running models.**
+These **10 fictional pairs** have AI-assisted reference preferences. No pair was captured from a real head-to-head model test.
 
-| Pair | Source issue | Draft reference preference | Reason |
+| Pair | Source detail | Proposed preference | Reason |
 |---|---|---|---|
-| PAIR-01 | Arithmetic | **A** | CAD 120 + 80 + 25 = 225, not 235 |
-| PAIR-02 | Implementation status | **A** | Design alone does not establish notification delivery |
-| PAIR-03 | Possible duplicate | **B** | One email shared by two records does not authorize deletion |
-| PAIR-04 | Redaction | **A** | The alternative exposes the fictional name |
-| PAIR-05 | Spanish real estate waiver | **A** | The buyer waived the financing condition in writing; the alternative incorrectly claims expiry |
-| PAIR-06 | Missing tax context | **A** | Without a rate or jurisdiction the exact tax-inclusive amount is unknown |
-| PAIR-07 | Equivalent wording | **TIE** | Both responses preserve the same pending status |
-| PAIR-08 | No completed test | **NEITHER** | Both claim execution results not present in the source |
-| PAIR-09 | Spanish pending approval | **B** | *Pendiente de aprobación* does not mean approved |
-| PAIR-10 | Conflicting surnames | **B** | Matching emails do not establish which surname should overwrite another |
+| PAIR-01 | CAD 120 + 80 + 25 | A | Correct total is CAD 225 |
+| PAIR-02 | Design only, no delivery record | A | Don't claim a notification was sent |
+| PAIR-03 | Shared email, uncertain identity | B | Don't delete on an email match alone |
+| PAIR-04 | Required name masking | A | Alternative exposes a fictional name |
+| PAIR-05 | *El comprador renunció por escrito a la condición de financiamiento* | A | The waiver was written, not an expired condition |
+| PAIR-06 | No tax rate or jurisdiction | A | The final tax-inclusive total cannot be known |
+| PAIR-07 | Status is pending | TIE | Both English phrasings preserve that status |
+| PAIR-08 | No completed test | NEITHER | Both responses invent execution results |
+| PAIR-09 | *El pago está pendiente de aprobación* | B | Approval is pending, not complete |
+| PAIR-10 | Surname conflicts | B | The source doesn't authorize an overwrite |
 
-[Answer-key-free A/B prompts](unscored_pairs.jsonl) · [Full pairs with AI reference keys](pairs.jsonl) · [Rubric](rubric.md) · [Blank personal review record](OWNER_REVIEW_WORKSHEET.md)
+[Complete paired sources and answers](pairs.jsonl) · [Pairs without ratings](unscored_pairs.jsonl) · [Harder A/B practice](practice/pairs.jsonl) · [Rubric](rubric.md)
 
-The table documents *proposed* decisions. No independently completed pairwise ratings, model win rates or annotator agreement statistics are claimed.
+The preferences above are proposed reference decisions. They do not measure model win rate, personal accuracy or agreement with another reviewer.
