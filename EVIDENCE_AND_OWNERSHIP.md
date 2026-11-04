@@ -6,7 +6,7 @@ This portfolio has two kinds of material that should not be confused.
 
 **Self-directed work.** The 30 fictional responses, ten pairs, proposed reference ratings, Python scripts and documentation were prepared with AI assistance. The processing-reconciliation exercise uses fictional records and reports ten open exceptions. Code tests establish the defined program behaviour, not independent evaluator judgment.
 
-The additional [practice questions](ai-evaluation/practice/README.md) and [model-output review procedure](ai-evaluation/REAL_OUTPUT_REVIEW_PROTOCOL.md) are preparation materials, **not completed evaluations or captured model results**. The [personal review record](ai-evaluation/OWNER_REVIEW_WORKSHEET.md) has no entries.
+The additional [practice questions](ai-evaluation/practice/README.md), [six-review completion guide](ai-evaluation/INDEPENDENT_REVIEW_SPRINT.md) and [model-output review procedure](ai-evaluation/REAL_OUTPUT_REVIEW_PROTOCOL.md) are preparation materials, **not completed evaluations or captured model results**. The [personal review record](ai-evaluation/OWNER_REVIEW_WORKSHEET.md) has no entries.
 
 No paid AI annotation project, second-rater agreement, label quality rate, live model benchmark, professional translation evaluation, or completed independent calibration is claimed.
 

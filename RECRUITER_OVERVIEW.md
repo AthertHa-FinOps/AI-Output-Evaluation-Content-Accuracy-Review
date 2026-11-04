@@ -2,38 +2,35 @@
 
 **Hans Atherton** · Stouffville, Ontario · English / Spanish · [LinkedIn](https://www.linkedin.com/in/hans-atherton-82638234/)
 
-The strongest paid evidence is transaction-document review and pension-account reconciliation. This repository adds fictional AI-response exercises with AI-assisted reference ratings. They are not independently completed annotation jobs.
+My paid experience includes checking real estate agreements and financial records, investigating documentation discrepancies, and auditing pension-account calculations at HOOPP. The exercises below illustrate response-review methods using **fictional responses and AI-assisted reference decisions**; they are not independently completed annotation jobs.
 
-## Most relevant samples
+## Start with an example
 
-| Recruiter question | Open | What it shows |
+| Evaluation scenario | Reference example | What it illustrates |
 |---|---|---|
-| Can the reviewer detect a wrong answer with convincing wording? | [EV-04](ai-evaluation/WORKED_EXAMPLES.md) | CAD 90 + CAD 10 was reported as CAD 90 |
-| Can the reviewer follow a mandatory data-masking rule? | [EV-13](ai-evaluation/WORKED_EXAMPLES.md) | The account ID was returned when redaction was required |
-| Will the reviewer avoid inventing a deployment claim? | [EV-10](ai-evaluation/WORKED_EXAMPLES.md) | A cautious response is acceptable when no run log exists |
-| Can the reviewer preserve Spanish meaning? | [PAIR-09](ai-evaluation/PAIRED_COMPARISONS.md) | *Pendiente de aprobación* means awaiting approval |
-| Can the reviewer reject two unsupported responses? | [PAIR-08](ai-evaluation/PAIRED_COMPARISONS.md) | Neither claims a test result the source actually provides |
-| Can the reviewer trace a processing mismatch? | [EX-006](back-office-case-study/README.md) | CAD 14,200 in the source versus CAD 12,400 in the export |
+| An answer omits a source amount | [EV-04](ai-evaluation/WORKED_EXAMPLES.md) | Two approved adjustments total CAD 100, not CAD 90 |
+| A masking requirement is missed | [EV-13](ai-evaluation/WORKED_EXAMPLES.md) | A fictional account identifier must be fully redacted |
+| Deployment evidence is absent | [EV-10](ai-evaluation/WORKED_EXAMPLES.md) | A workflow export does not prove a live run |
+| Spanish meaning changes | [PAIR-09](ai-evaluation/PAIRED_COMPARISONS.md) | *Pendiente de aprobación* means awaiting approval |
+| Both outputs make unsupported claims | [PAIR-08](ai-evaluation/PAIRED_COMPARISONS.md) | Neither answer can be accepted without test evidence |
+| A processing amount is inconsistent | [EX-006](back-office-case-study/README.md) | A fictional source amount of CAD 14,200 differs from an export value of CAD 12,400 |
 
-These are *proposed reference assessments*, not ratings I have independently signed off.
+Each linked reference is inspectable, but **a correct proposed reference answer is not evidence that I independently produced the rating**.
 
-## Fit by target role
+## How the evidence relates to jobs
 
-| Target role | Relevant evidence | Remaining gap |
+| Potential role | Useful evidence | Current limit |
 |---|---|---|
-| 1. AI Response Evaluator / AI Output Evaluator | Source checks, explicit verdicts, reasons for rejection | My own dated first-pass ratings |
-| 2. AI Data Annotator — LLM / Text Evaluation | Labelled text cases, instructions and A/B preferences | Annotation-system experience and measured consistency |
-| 3. Bilingual AI Evaluator — English / Spanish | Five Spanish-source cases and two paired examples; separate bilingual work experience | Nuanced, independently rated Spanish work |
-| 4. AI Content Quality Reviewer / Factual Accuracy Reviewer | Arithmetic, misleading statements, source support | Independent assessments of unseen responses |
-| 5. AI Response Quality Analyst / LLM Quality Reviewer | Rubric and reproducible reference checks | Reviewing other annotators, adjudication and calibration |
-| 6. AI Training Data Quality Reviewer | Record-level exceptions and reference-label checks | Actual label-audit and data-guideline experience |
-| 7. Document Quality Reviewer / Records Accuracy Analyst | Paid document checks and pension-account reconciliation; processing exercise | Role-specific records/systems experience |
-| 8. Back-Office Quality Assurance / Transaction Quality Analyst | Paid regulated document handling and reconciliation examples | Employer-specific QA tools and approval procedures |
+| AI Response Evaluator / Text Annotator | Source comparisons, an explicit rubric, constructed A/B exercises | No completed dated first-pass ratings or paid annotation |
+| Bilingual English–Spanish AI Evaluator | Five Spanish-source response cases, two original Spanish-source pairs and additional practice with Spanish output | No independently written Spanish grading rationales yet |
+| Factual Accuracy / Content Quality Reviewer | Missing amounts, unsupported claims, privacy-masking and conditional-meaning cases | Proposed reference decisions were AI-assisted |
+| AI Response Quality Analyst | Case structure and selected automated schema checks | No second-rater agreement, calibration or adjudication experience established |
+| Document / Transaction Quality Reviewer | Paid regulated-document review, HOOPP reconciliation and the separate processing exercise | Employer-specific systems and procedures still require verification |
 
-Junior and contract postings may fit, but a title alone does not establish eligibility or competitiveness. Requirements should be checked against each vacancy.
+The relevant qualifications depend on the exact job posting. My paid work is the stronger evidence for document-review and financial-operations vacancies.
 
-## How to assess this work
+## Practical review of my own judgments
 
-For a quick discussion, choose a [source and response](ai-evaluation/unscored_cases.jsonl) and ask what statement is supported, what should be changed, and what evidence would alter the decision. The [harder practice set](ai-evaluation/practice/README.md) includes register, localization and close-call questions without answer keys. My [personal review record](ai-evaluation/OWNER_REVIEW_WORKSHEET.md) remains empty.
+The [six-review practice plan](ai-evaluation/INDEPENDENT_REVIEW_SPRINT.md) points to six existing exercises without supplied ratings and explains how I will record first decisions. The [review log](ai-evaluation/owner_review_log_template.csv) currently contains **blank rating fields**. The [real-model protocol](ai-evaluation/REAL_OUTPUT_REVIEW_PROTOCOL.md) describes how to record actual generated responses in a future permitted exercise; no runs are currently logged.
 
-[Main portfolio](README.md) · [Reference scoring rubric](ai-evaluation/rubric.md) · [Ownership and limits](EVIDENCE_AND_OWNERSHIP.md)
+[Main portfolio](README.md) · [Scoring rubric](ai-evaluation/rubric.md) · [Evidence and ownership](EVIDENCE_AND_OWNERSHIP.md)

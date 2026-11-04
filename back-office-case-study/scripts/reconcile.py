@@ -1,4 +1,4 @@
-"""Read-only comparison of fictional source and processing exports; standard library only."""
+"""Reconcile fictional exports without changing inputs; write exception reports and summaries."""
 import csv
 from collections import Counter, defaultdict
 from decimal import Decimal, InvalidOperation

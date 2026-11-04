@@ -1,15 +1,15 @@
 # Two-minute recruiter walkthrough — outline only
 
-This is a speaking guide, not evidence that a video has been recorded or a personal review completed.
+This is a speaking outline, not evidence that a recording or an independent evaluation has been completed.
 
-**0:00–0:25 | Show the review method.** Start at the [main README](README.md). EV-04 supplies CAD 90 and CAD 10 in approved adjustments; the fictional response states CAD 90. The AI-assisted reference rejects it because the combined amount is CAD 100.
+**0:00–0:25 | Show the reference review.** Open [EV-04](ai-evaluation/WORKED_EXAMPLES.md). The source lists CAD 90 and CAD 10 in approved adjustments; the constructed response reports only CAD 90. The AI-assisted reference identifies the omission and correct total of CAD 100.
 
-**0:25–0:55 | Check an evidence limit.** Open [EV-10](ai-evaluation/WORKED_EXAMPLES.md). A workflow export without an execution record does not prove a deployment. A cautious answer is appropriate; uncertainty is not automatically a defect.
+**0:25–0:50 | Explain an evidence limit.** Open [EV-10](ai-evaluation/WORKED_EXAMPLES.md). The source provides a workflow export, not an execution record. The cautious fictional response avoids inventing deployment.
 
-**0:55–1:20 | Discuss Spanish meaning.** Show [PAIR-09](ai-evaluation/PAIRED_COMPARISONS.md) and explain why *pendiente de aprobación* cannot be reported as approved. The [additional practice tasks](ai-evaluation/practice/README.md) include less obvious questions about formal address and regional wording. Do not claim they have been independently rated.
+**0:50–1:15 | Check bilingual meaning.** In [PAIR-09](ai-evaluation/PAIRED_COMPARISONS.md), *pendiente de aprobación* means awaiting approval, not approved. The proposed comparison prefers the response that retains the pending status.
 
-**1:20–1:40 | Connect paid work.** Briefly describe how agreements and amendments are checked in real estate transactions, or how pension-account discrepancies were checked and peer-reviewed at HOOPP. This paid work is different from model annotation.
+**1:15–1:40 | Demonstrate record reconciliation.** In the [back-office exercise](back-office-case-study/README.md), a fictional source amount of CAD 14,200 differs from a processing export amount of CAD 12,400. The script records the exception without correcting the underlying file.
 
-**1:40–2:00 | Explain the boundary.** The example answers and reference ratings were prepared with AI assistance. The [personal review record](ai-evaluation/OWNER_REVIEW_WORKSHEET.md) remains uncompleted, and [real model-output capture](ai-evaluation/REAL_OUTPUT_REVIEW_PROTOCOL.md) is a procedure, not a claimed result.
+**1:40–2:00 | Explain the evidence boundary and next step.** My paid real estate and HOOPP work involved document and account checks. The AI-response ratings here were drafted with AI assistance, and the [personal review record](ai-evaluation/OWNER_REVIEW_WORKSHEET.md) remains blank. The [six-review practice plan](ai-evaluation/INDEPENDENT_REVIEW_SPRINT.md) describes the next independently performed work.
 
-When personal evaluations have genuinely been performed, replace the reference example with your own first-pass judgment and any documented disagreement with the reference.
+Once genuine first-pass reviews exist, revise this outline to feature one of those dated reviews and an original Spanish rationale. Do not imply that the outline is a recorded video.

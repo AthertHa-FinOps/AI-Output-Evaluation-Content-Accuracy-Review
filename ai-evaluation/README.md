@@ -22,7 +22,7 @@ There are five Spanish-source single responses and two Spanish-source pairs. The
 
 For existing cases, use the [rating-hidden inputs](unscored_cases.jsonl) and [rating-hidden pairs](unscored_pairs.jsonl). For each response, record the first judgment, decisive source detail, applicable dimension scores and actual date in the [personal review log](owner_review_log_template.csv). Then compare the first judgment with the AI-assisted reference and note any disagreement. Previously seen keys make the exercise reference-hidden, not truly blind.
 
-For independent evidence on real model outputs, follow the [capture procedure](REAL_OUTPUT_REVIEW_PROTOCOL.md). No such runs or personal results have been recorded.
+For a manageable first set, follow the [six-review completion guide](INDEPENDENT_REVIEW_SPRINT.md). For independent evidence on real model outputs, follow the [capture procedure](REAL_OUTPUT_REVIEW_PROTOCOL.md). No such runs or personal results have been recorded.
 
 ## Technical checks
 
