@@ -21,7 +21,7 @@ Each linked reference is inspectable, but **a correct proposed reference answer 
 
 | Potential role | Useful evidence | Current limit |
 |---|---|---|
-| AI Response Evaluator / Text Annotator | Source comparisons, an explicit rubric, constructed A/B exercises | No completed dated first-pass ratings or paid annotation |
+| AI Response Evaluator / Text Annotator | Source comparisons, an explicit rubric, constructed A/B exercises | One dated first-pass decision; no broader independently rated sample or paid annotation |
 | Bilingual English–Spanish AI Evaluator | Five Spanish-source response cases, two original Spanish-source pairs and additional practice with Spanish output | No independently written Spanish grading rationales yet |
 | Factual Accuracy / Content Quality Reviewer | Missing amounts, unsupported claims, privacy-masking and conditional-meaning cases | Proposed reference decisions were AI-assisted |
 | AI Response Quality Analyst | Case structure and selected automated schema checks | No second-rater agreement, calibration or adjudication experience established |
@@ -31,6 +31,6 @@ The relevant qualifications depend on the exact job posting. My paid work is the
 
 ## Practical review of my own judgments
 
-The [six-review practice plan](ai-evaluation/INDEPENDENT_REVIEW_SPRINT.md) points to six existing exercises without supplied ratings and explains how I will record first decisions. The [review log](ai-evaluation/owner_review_log_template.csv) currently contains **blank rating fields**. The [real-model protocol](ai-evaluation/REAL_OUTPUT_REVIEW_PROTOCOL.md) describes how to record actual generated responses in a future permitted exercise; no runs are currently logged.
+The [six-review practice plan](ai-evaluation/INDEPENDENT_REVIEW_SPRINT.md) points to six existing exercises without supplied ratings and explains how I will record first decisions. The [review log](ai-evaluation/owner_review_log_template.csv) records one initial ADV-01 verdict and later-submitted dimension scores; other practice records remain uncompleted. The [real-model protocol](ai-evaluation/REAL_OUTPUT_REVIEW_PROTOCOL.md) describes how to record actual generated responses in a future permitted exercise; no runs are currently logged.
 
 [Main portfolio](README.md) · [Scoring rubric](ai-evaluation/rubric.md) · [Evidence and ownership](EVIDENCE_AND_OWNERSHIP.md)

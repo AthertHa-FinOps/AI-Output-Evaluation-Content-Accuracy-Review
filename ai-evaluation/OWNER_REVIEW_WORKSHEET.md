@@ -1,8 +1,8 @@
 # Personal response-review record
 
-**Status:** No independently completed ratings have been entered. AI-assisted reference judgments are available for the original 30 cases and 10 pairs; the additional practice cases have no supplied reference answers.
+**Status:** One personal first-pass judgment is recorded for ADV-01 (November 4, 2026). Its decision, evidence and original explanation were saved before assistant feedback; dimension scores were submitted afterward. The other 51 prepared rows have no completed reviews. AI-assisted reference judgments are available for the original 30 cases and 10 pairs; the additional practice questions have no supplied reference answers.
 
-Use the [blank CSV review log](owner_review_log_template.csv) for **30 original single-response cases, 10 original pairs, 8 additional single-response exercises and 4 additional pairs**. Each row has its ID and type only. No rating, date, evidence or rationale has been filled in.
+Use the [CSV review log](owner_review_log_template.csv) for **30 original single-response cases, 10 original pairs, 8 additional single-response exercises and 4 additional pairs**. One row (ADV-01) contains an initial decision and later-submitted dimension scores; other rows remain blank. A separate [Mexican Spanish variant](practice/ADV-02-MX.md) has its own [review log](practice/regional_review_log.csv) so the original ADV-02 case and the 52-row template remain unchanged.
 
 ## Record a defensible decision
 

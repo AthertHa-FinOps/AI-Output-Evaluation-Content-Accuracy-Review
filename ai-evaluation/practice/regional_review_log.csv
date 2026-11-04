@@ -1,0 +1,2 @@
+case_id,review_kind,set,review_date,first_verdict_or_preference,grounding_score,instructions_score,privacy_score,completeness_score,source_evidence,original_rationale,rationale_language,uncertainty_or_strength,reference_checked_later,disagreement_or_revision
+ADV-02-MX,single,mexican-variant,,,,,,,,,,,,

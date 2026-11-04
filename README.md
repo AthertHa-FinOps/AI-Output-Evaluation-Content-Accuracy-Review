@@ -33,7 +33,7 @@ In my paid real estate work since 2012, I review legally binding agreements, ame
 
 ## Independent-review progress
 
-The [personal review record](ai-evaluation/OWNER_REVIEW_WORKSHEET.md) has **no completed first-pass ratings**. There are no recorded runs of named models, independent reviewer-agreement metrics or paid annotation assignments in this repository.
+The [personal review record](ai-evaluation/OWNER_REVIEW_WORKSHEET.md) contains **one dated first-pass judgment (ADV-01, November 4, 2026)**. The original decision and rationale were saved before assistant feedback; dimension scores were supplied afterward. The remaining reviews are not completed. There are no recorded runs of named models, independent reviewer-agreement metrics or paid annotation assignments in this repository.
 
 The next evidence-building step is the [six-review practice plan](ai-evaluation/INDEPENDENT_REVIEW_SPRINT.md). It identifies specific unscored exercises and how to preserve first decisions without inventing results. The [real-model capture protocol](ai-evaluation/REAL_OUTPUT_REVIEW_PROTOCOL.md) is available for future permitted runs; the corresponding log is empty.
 

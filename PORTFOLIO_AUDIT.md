@@ -10,7 +10,7 @@
 | Original A/B comparisons | 10 | Fictional pairs and AI-assisted reference preferences |
 | Spanish-source cases / original pairs | 5 / 2 | Short illustrative English responses |
 | Additional harder individual / pair exercises | 8 / 4 | Unscored fictional tasks; no answer keys |
-| Personal review-log entries prepared | 52 | IDs only; ratings, rationales and dates left empty |
+| Personal review-log rows prepared | 52 | ADV-01 first-pass judgment recorded November 4, 2026; dimension scores added after assistant feedback; 51 other rows remain uncompleted |
 | Captured runs of named models | 0 recorded | [Protocol and empty log](ai-evaluation/REAL_OUTPUT_REVIEW_PROTOCOL.md) provided |
 | Supporting reconciliation | 14 source and 14 export records; 10 flagged exceptions | Reproducible fictional processing example |
 
@@ -26,7 +26,7 @@ The validators **cannot establish** the truth of every subjective reference judg
 
 The public README now uses **response under review** rather than calling the fictional output a job candidate. A consistent term, **reference rating**, describes the AI-assisted proposed decision. The repository's older field names (`candidate_output`, `reference_decision`) remain in machine-readable files for backward compatibility and are explained in the [rubric](ai-evaluation/rubric.md). The four legacy insufficient-evidence cases describe fact uncertainty and do not mean that cautious responses failed.
 
-The new practice tasks include formal address in Spanish, Chilean vocabulary, unfulfilled conditions, near-tie preference judgments, format violations and unnecessary refusals. They have **no completed reviewer judgments**; writing original Spanish explanations and reviewing unseen model outputs remain actual work for the applicant.
+The new practice tasks include formal address in Spanish, Chilean vocabulary, unfulfilled conditions, near-tie preference judgments, format violations and unnecessary refusals. ADV-01 now has one recorded personal first-pass judgment. The remaining practice tasks, including the separate [Mexican Spanish variant](ai-evaluation/practice/ADV-02-MX.md), have no personal judgments recorded. Writing original Spanish explanations and reviewing unseen model outputs remain actual work for the applicant.
 
 ## Recruiter fit and limitations
 
